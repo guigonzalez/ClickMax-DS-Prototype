@@ -27,18 +27,30 @@ npm whoami
 # Deve retornar: guigonzalez
 ```
 
-### 3. Criar Organization no NPM (primeira vez)
+### 3. Organization no NPM (OPCIONAL para pacotes públicos)
+
+**IMPORTANTE**: Para pacotes públicos com `--access public`, você **NÃO precisa** criar uma organization. O NPM permite publicar pacotes com escopo (@clickmax) diretamente como público e gratuito.
+
+#### Opção A: Publicar Direto (Recomendado - Gratuito)
+Simplesmente publique com `--access public` (já configurado nos scripts):
+```bash
+npm run publish:latest --otp=123456
+```
+
+#### Opção B: Criar Organization (Apenas se necessário)
+Se você planeja adicionar membros ou gerenciar múltiplos pacotes:
 
 1. Acesse https://www.npmjs.com/
 2. Clique em seu avatar → "Add Organization"
 3. Nome da organization: **clickmax**
-4. Tipo: **Paid** ou **Free** (free tem limites de membros)
+4. Tipo: **Free** (permite até X membros)
 
 Ou via CLI:
-
 ```bash
 npm org create clickmax
 ```
+
+**Nota**: Para primeira publicação de pacote público, a Opção A é suficiente e gratuita.
 
 ## Processo de Publicação
 
