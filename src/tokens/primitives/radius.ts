@@ -14,4 +14,4 @@ export const radius = {
   full: '9999px',
 } as const;
 
-export type Radius = typeof radius;
+export type RadiusTokens = typeof radius;

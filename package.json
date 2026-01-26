@@ -1,11 +1,36 @@
 {
   "name": "@clickmax/design-system",
   "version": "0.1.0",
-  "private": true,
+  "description": "Modern Design System built with React 19, Tailwind CSS 4, and Radix UI - ClickMax Design System R",
   "type": "module",
   "sideEffects": [
     "*.css"
   ],
+  "author": {
+    "name": "Guilherme Gonzalez",
+    "url": "https://github.com/guigonzalez"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guigonzalez/ClickMax-DS-Prototype.git"
+  },
+  "bugs": {
+    "url": "https://github.com/guigonzalez/ClickMax-DS-Prototype/issues"
+  },
+  "homepage": "https://github.com/guigonzalez/ClickMax-DS-Prototype#readme",
+  "keywords": [
+    "design-system",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "radix-ui",
+    "components",
+    "ui",
+    "storybook",
+    "accessibility",
+    "clickmax"
+  ],
+  "license": "MIT",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
@@ -32,7 +57,8 @@
   ],
   "scripts": {
     "dev": "rsbuild dev",
-    "build": "rslib build",
+    "build": "rslib build && npm run build:css",
+    "build:css": "cp src/styles/globals.css dist/styles.css",
     "build:watch": "rslib build --watch",
     "preview": "rsbuild preview",
     "storybook": "storybook dev -p 6006",
@@ -44,7 +70,11 @@
     "lint:fix": "eslint src --ext .ts,.tsx --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\"",
     "type-check": "tsc --noEmit",
-    "clean": "rm -rf dist .storybook-static"
+    "clean": "rm -rf dist .storybook-static",
+    "prepublishOnly": "npm run clean && npm run build && npm run type-check",
+    "publish:dry": "npm publish --dry-run",
+    "publish:beta": "npm publish --tag beta",
+    "publish:latest": "npm publish"
   },
   "peerDependencies": {
     "react": ">=19.0.0",
@@ -68,6 +98,7 @@
     "@radix-ui/react-tooltip": "^1.1.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "lucide-react": "^0.468.0",
     "tailwind-merge": "^3.0.1"
   },
   "devDependencies": {
@@ -96,7 +127,6 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "globals": "^15.14.0",
     "happy-dom": "^20.3.9",
-    "lucide-react": "^0.468.0",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "react": "^19.0.0",

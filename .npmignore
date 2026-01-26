@@ -1,0 +1,47 @@
+# Source files
+src/
+docs/
+
+# Config files
+.storybook/
+rsbuild.config.ts
+rslib.config.ts
+tsconfig.json
+eslint.config.js
+.prettierrc
+postcss.config.js
+vitest.config.ts
+
+# Development files
+.vscode/
+.idea/
+*.log
+*.swp
+*.swo
+
+# Build artifacts (except dist)
+.rsbuild/
+.rslib/
+storybook-static/
+
+# Git files
+.git/
+.gitignore
+.gitattributes
+
+# Tests
+__tests__/
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+
+# Development dependencies
+node_modules/
+
+# Misc
+.DS_Store
+*.pem
+.env
+.env.local
+coverage/

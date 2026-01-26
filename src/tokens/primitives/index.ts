@@ -16,7 +16,7 @@ export { animations } from './animations';
 export type { Colors } from './colors';
 export type { Spacing } from './spacing';
 export type { Typography } from './typography';
-export type { Radius } from './radius';
+export type { RadiusTokens } from './radius';
 export type { Shadows } from './shadows';
 export type { ZIndex } from './zIndex';
 export type { Breakpoints } from './breakpoints';

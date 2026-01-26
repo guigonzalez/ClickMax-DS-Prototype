@@ -15,7 +15,6 @@ import {
   CheckCircle2,
   Info,
   CreditCard,
-  Calendar,
   Settings,
   User,
   Mail,
