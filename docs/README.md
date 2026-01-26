@@ -18,22 +18,25 @@ Bem-vindo a documentacao do ClickMax Design System R.
 ### Instalacao
 
 ```bash
-npm install @clickmax/design-system
+npm install
 ```
 
-### Configuracao
+### Desenvolvimento
 
-1. Importe os estilos globais no seu app:
+```bash
+# Iniciar dev server com Rsbuild
+npm run dev
 
-```tsx
-// main.tsx ou App.tsx
-import '@clickmax/design-system/styles.css';
+# Iniciar Storybook
+npm run storybook
 ```
 
-2. Use os componentes:
+### Usando os Componentes
+
+Importe os componentes diretamente do código fonte:
 
 ```tsx
-import { Button, Input, Badge, Card } from '@clickmax/design-system';
+import { Button, Input, Badge, Card } from './components';
 
 function App() {
   return (
@@ -98,12 +101,14 @@ Acesse em: http://localhost:6006
 - Comportamentos complexos ja implementados
 - Suporte a composicao
 
-### Por que Rsbuild/Rslib?
+### Por que Rsbuild?
 
-- Build rapido baseado em Rspack
+- Build ultra-rapido baseado em Rspack (Rust)
 - Suporte nativo a React 19
-- Output ESM + CJS
-- Menor config que Vite para libs
+- Configuracao minima comparado ao Webpack/Vite
+- Dev server instantaneo
+- Hot Module Replacement (HMR) extremamente rapido
+- Integração nativa com Storybook via storybook-react-rsbuild
 
 ---
 

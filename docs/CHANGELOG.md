@@ -4,6 +4,86 @@ Historico de todas as mudancas e decisoes do projeto.
 
 ---
 
+## [1.0.1] - 2026-01-26
+
+### Simplificacao do Setup
+
+#### Remocao de Rslib
+**Decisao**: Remover @rslib/core e usar apenas Rsbuild
+
+**Justificativa**:
+- Rsbuild é suficiente para desenvolvimento e build de componentes
+- Reduz complexidade da configuração
+- Elimina dependência adicional
+- Mantém stack alinhado com o ecossistema Rsbuild
+
+**Mudancas**:
+- ❌ Removido: `rslib.config.ts`
+- ❌ Removido: `@rslib/core` dependency
+- ✅ Mantido: `rsbuild.config.ts` para dev e build
+
+#### Remocao de Vitest/Testing
+**Decisao**: Remover Vitest e testing-library
+
+**Justificativa**:
+- Testes unitários não são prioridade inicial
+- Foco em desenvolvimento de componentes e Storybook
+- Pode ser adicionado futuramente com rstest se necessário
+
+**Mudancas**:
+- ❌ Removido: `vitest.config.ts`
+- ❌ Removido: `vitest`, `@vitest/ui`, `@vitest/coverage-v8`
+- ❌ Removido: `@testing-library/*` packages
+- ❌ Removido: `happy-dom`
+
+#### Remocao de Publishing
+**Decisao**: Remover configurações e arquivos de publicação NPM
+
+**Justificativa**:
+- Não haverá publicação no NPM no momento
+- Reduz confusão com configurações desnecessárias
+- Mantém foco em desenvolvimento
+
+**Mudancas**:
+- ❌ Removido: `README.md` (root - para NPM)
+- ❌ Removido: `PUBLISHING.md`
+- ❌ Removido: `LICENSE`
+- ❌ Removido: `.npmignore`
+- ❌ Removido: `publishConfig` do package.json
+- ❌ Removido: scripts de publishing (prepublishOnly, publish:*)
+- ✅ Adicionado: `"private": true` no package.json
+
+#### Scripts Atualizados
+
+**Antes**:
+```json
+{
+  "build": "rslib build && npm run build:css",
+  "build:watch": "rslib build --watch",
+  "test": "vitest",
+  "prepublishOnly": "npm run clean && npm run build && npm run type-check",
+  "publish:dry": "npm publish --dry-run --access public"
+}
+```
+
+**Depois**:
+```json
+{
+  "build": "rsbuild build"
+}
+```
+
+**Scripts mantidos**:
+- ✅ `dev`: Desenvolvimento com Rsbuild
+- ✅ `build`: Build de produção
+- ✅ `preview`: Preview do build
+- ✅ `storybook`: Desenvolvimento Storybook
+- ✅ `build-storybook`: Build Storybook
+- ✅ `lint`, `lint:fix`, `format`: Code quality
+- ✅ `type-check`: TypeScript validation
+
+---
+
 ## [1.0.0] - 2026-01-26
 
 ### Inicializacao do Projeto
@@ -15,9 +95,8 @@ Historico de todas as mudancas e decisoes do projeto.
 | React | 19.x | Ultima versao estavel com melhorias de performance |
 | TypeScript | 5.9+ | Type safety e melhor DX |
 | Tailwind CSS | 4.x | CSS-first config, melhor performance, CSS nativo |
-| Rsbuild | 1.3+ | Dev server rapido baseado em Rspack |
-| Rslib | 0.3+ | Build otimizado para bibliotecas (ESM + CJS) |
-| Storybook | 10.2 | Documentacao e desenvolvimento isolado |
+| Rsbuild | 1.7+ | Dev server rapido baseado em Rspack (substitui rslib) |
+| Storybook | 8.5+ | Documentacao e desenvolvimento isolado |
 | Radix UI | Latest | Primitivos acessiveis e sem estilo |
 | CVA | 0.7+ | Gerenciamento de variantes type-safe |
 
@@ -46,9 +125,10 @@ POC DS R/
 ├── docs/                    # Documentacao do projeto
 ├── package.json
 ├── tsconfig.json
-├── rslib.config.ts
 └── rsbuild.config.ts
 ```
+
+**Nota**: Removido rslib.config.ts - usando apenas Rsbuild para desenvolvimento e build.
 
 ---
 
