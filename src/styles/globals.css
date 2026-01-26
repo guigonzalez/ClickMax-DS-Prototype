@@ -1,0 +1,230 @@
+@import 'tailwindcss';
+
+/* ===== Theme Configuration (Tailwind CSS 4 - CSS-first) ===== */
+@theme {
+  --font-family-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+
+  /* === Semantic Colors === */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #e8e9eb;
+  --color-bg-tertiary: #f5f5f5;
+  --color-bg-inverse: #2a2d31;
+  --color-bg-accent: #e4ff00;
+  --color-bg-disabled: #e8e9eb;
+
+  --color-text-primary: #2a2d31;
+  --color-text-secondary: #8b8f96;
+  --color-text-tertiary: #6b7280;
+  --color-text-inverse: #ffffff;
+  --color-text-accent: #2a2d31;
+  --color-text-disabled: #c5c7cc;
+
+  --color-border-default: #e8e9eb;
+  --color-border-strong: #2a2d31;
+  --color-border-subtle: #f5f5f5;
+  --color-border-focus: #e4ff00;
+
+  --color-feedback-error: #ef4444;
+  --color-feedback-warning: #f59e0b;
+  --color-feedback-success: #10b981;
+  --color-feedback-info: #3b82f6;
+
+  --color-interactive-default: #e4ff00;
+  --color-interactive-hover: #d1e600;
+  --color-interactive-active: #d1e600;
+
+  /* === Spacing === */
+  --spacing-button-x-sm: 12px;
+  --spacing-button-x-md: 16px;
+  --spacing-button-x-lg: 24px;
+  --spacing-button-gap-sm: 4px;
+  --spacing-button-gap-md: 8px;
+  --spacing-button-gap-lg: 8px;
+
+  --spacing-input-x: 12px;
+  --spacing-input-y: 8px;
+  --spacing-input-gap: 6px;
+
+  --spacing-card-padding: 24px;
+  --spacing-card-header-gap: 6px;
+
+  --spacing-badge-x: 10px;
+  --spacing-badge-y: 2px;
+}
+
+/* ===== Design Tokens as CSS Variables ===== */
+:root {
+  /* === Primitive Colors === */
+  --color-yellow-500: #e4ff00;
+  --color-yellow-600: #d1e600;
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f5f5f5;
+  --color-gray-200: #e8e9eb;
+  --color-gray-300: #c5c7cc;
+  --color-gray-400: #8b8f96;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-800: #3f4248;
+  --color-gray-900: #2a2d31;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-red-50: #fef2f2;
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+  --color-red-700: #b91c1c;
+  --color-orange-50: #fffbeb;
+  --color-orange-500: #f59e0b;
+  --color-orange-600: #d97706;
+  --color-green-50: #ecfdf5;
+  --color-green-500: #10b981;
+  --color-green-600: #059669;
+  --color-blue-50: #eff6ff;
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
+
+  /* === Semantic Colors === */
+  --bg-primary: var(--color-white);
+  --bg-secondary: var(--color-gray-200);
+  --bg-tertiary: var(--color-gray-100);
+  --bg-inverse: var(--color-gray-900);
+  --bg-accent: var(--color-yellow-500);
+  --bg-disabled: var(--color-gray-200);
+  --bg-subtle: var(--color-gray-50);
+
+  --text-primary: var(--color-gray-900);
+  --text-secondary: var(--color-gray-400);
+  --text-tertiary: var(--color-gray-500);
+  --text-inverse: var(--color-white);
+  --text-accent: var(--color-gray-900);
+  --text-disabled: var(--color-gray-300);
+  --text-muted: var(--color-gray-600);
+
+  --border-default: var(--color-gray-200);
+  --border-strong: var(--color-gray-900);
+  --border-subtle: var(--color-gray-100);
+  --border-focus: var(--color-yellow-500);
+  --border-disabled: var(--color-gray-200);
+
+  --feedback-error: var(--color-red-500);
+  --feedback-error-bg: var(--color-red-50);
+  --feedback-error-text: var(--color-red-700);
+  --feedback-warning: var(--color-orange-500);
+  --feedback-warning-bg: var(--color-orange-50);
+  --feedback-warning-text: var(--color-orange-600);
+  --feedback-success: var(--color-green-500);
+  --feedback-success-bg: var(--color-green-50);
+  --feedback-success-text: var(--color-green-600);
+  --feedback-info: var(--color-blue-500);
+  --feedback-info-bg: var(--color-blue-50);
+  --feedback-info-text: var(--color-blue-600);
+
+  --interactive-default: var(--color-yellow-500);
+  --interactive-hover: var(--color-yellow-600);
+  --interactive-active: var(--color-yellow-600);
+  --interactive-focus: var(--color-yellow-500);
+
+  /* === Spacing Tokens === */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* === Button Component Tokens === */
+  --button-padding-x-sm: 12px;
+  --button-padding-x-md: 16px;
+  --button-padding-x-lg: 24px;
+  --button-gap-sm: 4px;
+  --button-gap-md: 8px;
+  --button-gap-lg: 8px;
+
+  /* === Input Component Tokens === */
+  --input-height: 40px;
+  --input-padding-x: 12px;
+  --input-padding-y: 8px;
+  --input-gap: 4px;
+
+  /* === Card Component Tokens === */
+  --card-padding: 24px;
+  --card-gap: 16px;
+  --card-header-gap: 6px;
+
+  /* === Badge Component Tokens === */
+  --badge-padding-x: 8px;
+  --badge-padding-y: 2px;
+
+  /* === Animation Tokens === */
+  --duration-instant: 0ms;
+  --duration-fast: 150ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-enter: cubic-bezier(0, 0, 0.2, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+  --ease-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* === Z-Index Scale === */
+  --z-dropdown: 1000;
+  --z-sticky: 1100;
+  --z-overlay: 1300;
+  --z-modal: 1400;
+  --z-popover: 1500;
+  --z-toast: 1700;
+  --z-tooltip: 1800;
+
+  /* === Radius Tokens === */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-full: 9999px;
+
+  /* === Shadow Tokens === */
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* === Dark Theme Support === */
+[data-theme='dark'] {
+  --bg-primary: var(--color-gray-900);
+  --bg-secondary: var(--color-gray-800);
+  --bg-tertiary: var(--color-gray-800);
+  --bg-inverse: var(--color-white);
+  --bg-subtle: var(--color-gray-800);
+
+  --text-primary: var(--color-white);
+  --text-secondary: var(--color-gray-400);
+  --text-tertiary: var(--color-gray-500);
+  --text-inverse: var(--color-gray-900);
+  --text-muted: var(--color-gray-400);
+
+  --border-default: var(--color-gray-800);
+  --border-strong: var(--color-white);
+  --border-subtle: var(--color-gray-800);
+}
+
+/* === Base Styles === */
+html,
+body {
+  font-family: var(--font-family-sans);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === Focus Visible Utilities === */
+.focus-ring {
+  outline: none;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--interactive-focus);
+  outline-offset: 2px;
+}
