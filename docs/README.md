@@ -18,7 +18,7 @@ Bem-vindo a documentacao do ClickMax Design System R.
 ### Instalacao
 
 ```bash
-npm install @clickmax/ds
+npm install @clickmax/design-system
 ```
 
 ### Configuracao
@@ -27,13 +27,13 @@ npm install @clickmax/ds
 
 ```tsx
 // main.tsx ou App.tsx
-import '@clickmax/ds/styles/globals.css';
+import '@clickmax/design-system/styles.css';
 ```
 
 2. Use os componentes:
 
 ```tsx
-import { Button, Input, Badge, Card } from '@clickmax/ds';
+import { Button, Input, Badge, Card } from '@clickmax/design-system';
 
 function App() {
   return (

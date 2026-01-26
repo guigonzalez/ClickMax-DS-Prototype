@@ -446,7 +446,7 @@ export const CodeExamples: Story = {
             </h3>
             <pre className="bg-bg-secondary p-4 rounded-lg overflow-x-auto">
               <code className="text-xs font-mono text-text-primary">
-                {`import { Button, Input, Card, CardHeader, CardTitle, CardContent, CardFooter } from '@clickmax/ds';
+                {`import { Button, Input, Card, CardHeader, CardTitle, CardContent, CardFooter } from '@clickmax/design-system';
 
 function LoginForm() {
   return (
@@ -476,7 +476,7 @@ function LoginForm() {
             </h3>
             <pre className="bg-bg-secondary p-4 rounded-lg overflow-x-auto">
               <code className="text-xs font-mono text-text-primary">
-                {`import { Badge, Card } from '@clickmax/ds';
+                {`import { Badge, Card } from '@clickmax/design-system';
 import { Check, Clock, X } from 'lucide-react';
 
 function StatusList() {

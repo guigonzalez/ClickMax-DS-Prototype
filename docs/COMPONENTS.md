@@ -13,7 +13,7 @@ Componente wrapper para icones Lucide com variantes consistentes.
 #### Import
 
 ```tsx
-import { Icon, Settings, Home, User } from '@clickmax/ds';
+import { Icon, Settings, Home, User } from '@clickmax/design-system';
 // ou importar diretamente do lucide-react
 import { Settings } from 'lucide-react';
 ```
@@ -81,7 +81,7 @@ Botao interativo com multiplas variantes e tamanhos.
 #### Import
 
 ```tsx
-import { Button } from '@clickmax/ds';
+import { Button } from '@clickmax/design-system';
 ```
 
 #### Props
@@ -127,7 +127,7 @@ import { Button } from '@clickmax/ds';
 #### Com Icones
 
 ```tsx
-import { Button, Icon, Plus, Download, Settings } from '@clickmax/ds';
+import { Button, Icon, Plus, Download, Settings } from '@clickmax/design-system';
 
 // Botao com icone e texto
 <Button variant="primary">
@@ -173,7 +173,7 @@ Campo de entrada com suporte a label, descricao e erro.
 #### Import
 
 ```tsx
-import { Input } from '@clickmax/ds';
+import { Input } from '@clickmax/design-system';
 ```
 
 #### Props
@@ -242,7 +242,7 @@ Indicador de status ou rotulo.
 #### Import
 
 ```tsx
-import { Badge } from '@clickmax/ds';
+import { Badge } from '@clickmax/design-system';
 ```
 
 #### Props
@@ -307,7 +307,7 @@ import {
   CardDescription,
   CardContent,
   CardFooter
-} from '@clickmax/ds';
+} from '@clickmax/design-system';
 ```
 
 #### Subcomponentes

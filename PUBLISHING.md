@@ -73,12 +73,41 @@ Este comando irá:
 - ✅ Mostrar o conteúdo do pacote (108 arquivos)
 - ✅ Mostrar tamanho do pacote (29.9 kB compressed)
 
-### 3. Publicar versão Beta (recomendado primeiro)
+### 3. Publicar como Pacote Público (IMPORTANTE)
+
+**Todos os pacotes com escopo `@clickmax` devem ser públicos (gratuitos).**
+
+Os scripts já incluem `--access public` automaticamente:
+
+```bash
+npm run publish:beta    # Inclui --access public
+npm run publish:latest  # Inclui --access public
+```
+
+### 4. Autenticação 2FA (Two-Factor Authentication)
+
+Se sua conta NPM tem 2FA habilitado, você precisará fornecer o código OTP:
+
+```bash
+# Com 2FA - pegue o código do seu autenticador (Google Authenticator, Authy, etc)
+npm run publish:latest --otp=123456
+
+# Ou comando direto
+npm publish --access public --otp=123456
+```
+
+**Importante**: O código 2FA expira rapidamente (30 segundos), então tenha-o pronto antes de executar o comando.
+
+### 5. Publicar versão Beta (recomendado primeiro)
 
 Para testar em produção sem afetar a versão `latest`:
 
 ```bash
+# Sem 2FA
 npm run publish:beta
+
+# Com 2FA
+npm run publish:beta --otp=123456
 ```
 
 Instalar versão beta:
@@ -87,18 +116,16 @@ Instalar versão beta:
 npm install @clickmax/design-system@beta
 ```
 
-### 4. Publicar versão Latest (produção)
+### 6. Publicar versão Latest (produção)
 
 Quando estiver pronto para publicação oficial:
 
 ```bash
+# Sem 2FA
 npm run publish:latest
-```
 
-Ou simplesmente:
-
-```bash
-npm publish
+# Com 2FA
+npm run publish:latest --otp=123456
 ```
 
 ## Estrutura do Pacote Publicado
@@ -166,6 +193,31 @@ npm deprecate @clickmax/design-system@0.1.0 "Use version 0.2.0 instead"
 
 ## Troubleshooting
 
+### Erro: 402 Payment Required - You must sign up for private packages
+
+**Causa**: Pacotes com escopo (@clickmax) são privados por padrão e requerem pagamento.
+
+**Solução**: Use `--access public` para publicar gratuitamente:
+```bash
+npm publish --access public --otp=123456
+```
+
+Ou use os scripts que já incluem `--access public`:
+```bash
+npm run publish:latest --otp=123456
+```
+
+### Erro: EOTP - This operation requires a one-time password
+
+**Causa**: Sua conta tem 2FA habilitado.
+
+**Solução**: Forneça o código do seu autenticador:
+```bash
+npm publish --access public --otp=123456
+```
+
+**Dica**: Tenha o código pronto antes de executar, pois ele expira em 30 segundos.
+
 ### Erro: Access token expired
 
 ```bash
@@ -179,6 +231,7 @@ Certifique-se de:
 1. Ter criado a organization "clickmax"
 2. Ter permissão de publicação na org
 3. O nome do pacote está correto: `@clickmax/design-system`
+4. Usar `--access public` para pacotes gratuitos
 
 ### Erro: Package name already taken
 
@@ -239,6 +292,33 @@ npm dist-tag rm @clickmax/design-system beta
 
 ---
 
-**Pronto para publicar?** 🚀
+## 🚀 Comando Rápido para Publicar
 
-Execute: `npm login` e depois `npm run publish:beta`
+### Com 2FA habilitado (recomendado):
+
+```bash
+# 1. Faça login (se ainda não estiver logado)
+npm login
+
+# 2. Pegue o código 2FA do seu autenticador
+
+# 3. Publique (substitua 123456 pelo código real)
+npm run publish:latest --otp=123456
+```
+
+### Sem 2FA:
+
+```bash
+npm login
+npm run publish:latest
+```
+
+### Apenas para testar (beta):
+
+```bash
+npm run publish:beta --otp=123456
+```
+
+---
+
+**Pronto para publicar!** 🚀

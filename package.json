@@ -72,9 +72,9 @@
     "type-check": "tsc --noEmit",
     "clean": "rm -rf dist .storybook-static",
     "prepublishOnly": "npm run clean && npm run build && npm run type-check",
-    "publish:dry": "npm publish --dry-run",
-    "publish:beta": "npm publish --tag beta",
-    "publish:latest": "npm publish"
+    "publish:dry": "npm publish --dry-run --access public",
+    "publish:beta": "npm publish --tag beta --access public",
+    "publish:latest": "npm publish --access public"
   },
   "peerDependencies": {
     "react": ">=19.0.0",
