@@ -393,6 +393,307 @@ import {
 
 ---
 
+## Forms
+
+### Checkbox
+
+Caixa de selecao com suporte a estados checked, unchecked e indeterminate.
+
+#### Import
+
+```tsx
+import { Checkbox } from '@clickmax/design-system';
+```
+
+#### Props
+
+| Prop | Tipo | Default | Descricao |
+|------|------|---------|-----------|
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Tamanho do checkbox |
+| `label` | `string` | - | Label ao lado do checkbox |
+| `description` | `string` | - | Texto descritivo abaixo do label |
+| `checked` | `boolean \| 'indeterminate'` | - | Estado do checkbox |
+| `disabled` | `boolean` | `false` | Estado desabilitado |
+
+#### Tamanhos
+
+```tsx
+<Checkbox size="sm" label="Small (16px)" />
+<Checkbox size="md" label="Medium (20px)" />
+<Checkbox size="lg" label="Large (24px)" />
+```
+
+#### Estados
+
+```tsx
+// Checked
+<Checkbox checked={true} label="Aceito os termos" />
+
+// Unchecked
+<Checkbox checked={false} label="Newsletter" />
+
+// Indeterminate
+<Checkbox checked="indeterminate" label="Selecionar todos" />
+
+// Disabled
+<Checkbox disabled label="Opcao desabilitada" />
+```
+
+#### Com Descricao
+
+```tsx
+<Checkbox
+  label="Aceito os termos de uso"
+  description="Li e concordo com os termos e condicoes de uso do servico."
+  id="terms"
+/>
+```
+
+#### Acessibilidade
+
+- Focus visible com ring customizado
+- Estados checked/unchecked/indeterminate com `data-state`
+- Icones Check e Minus do Lucide React
+- Labels clicaveis associados corretamente
+
+---
+
+### Radio
+
+Botao de opcao exclusiva com RadioGroup para agrupamento.
+
+#### Import
+
+```tsx
+import { RadioGroup, RadioGroupItem } from '@clickmax/design-system';
+```
+
+#### Props
+
+**RadioGroup**:
+| Prop | Tipo | Default | Descricao |
+|------|------|---------|-----------|
+| `value` | `string` | - | Valor selecionado (controlled) |
+| `defaultValue` | `string` | - | Valor inicial (uncontrolled) |
+| `onValueChange` | `(value: string) => void` | - | Callback de mudanca |
+| `disabled` | `boolean` | `false` | Desabilita todos os radios |
+
+**RadioGroupItem**:
+| Prop | Tipo | Default | Descricao |
+|------|------|---------|-----------|
+| `value` | `string` | - | Valor unico do item |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Tamanho do radio |
+| `label` | `string` | - | Label ao lado do radio |
+| `description` | `string` | - | Texto descritivo abaixo do label |
+| `disabled` | `boolean` | `false` | Estado desabilitado |
+
+#### Uso Basico
+
+```tsx
+<RadioGroup defaultValue="option-1">
+  <RadioGroupItem value="option-1" label="Opcao 1" id="opt-1" />
+  <RadioGroupItem value="option-2" label="Opcao 2" id="opt-2" />
+  <RadioGroupItem value="option-3" label="Opcao 3" id="opt-3" />
+</RadioGroup>
+```
+
+#### Tamanhos
+
+```tsx
+<RadioGroup defaultValue="sm-1">
+  <RadioGroupItem value="sm-1" label="Small (16px)" id="sm-1" size="sm" />
+  <RadioGroupItem value="sm-2" label="Small (16px)" id="sm-2" size="sm" />
+</RadioGroup>
+
+<RadioGroup defaultValue="md-1">
+  <RadioGroupItem value="md-1" label="Medium (20px)" id="md-1" size="md" />
+  <RadioGroupItem value="md-2" label="Medium (20px)" id="md-2" size="md" />
+</RadioGroup>
+
+<RadioGroup defaultValue="lg-1">
+  <RadioGroupItem value="lg-1" label="Large (24px)" id="lg-1" size="lg" />
+  <RadioGroupItem value="lg-2" label="Large (24px)" id="lg-2" size="lg" />
+</RadioGroup>
+```
+
+#### Com Descricao
+
+```tsx
+<RadioGroup defaultValue="monthly">
+  <RadioGroupItem
+    value="monthly"
+    label="Mensal"
+    description="R$ 29,90 por mes. Cancele quando quiser."
+    id="monthly"
+  />
+  <RadioGroupItem
+    value="yearly"
+    label="Anual"
+    description="R$ 299,90 por ano. Economize 17%."
+    id="yearly"
+  />
+</RadioGroup>
+```
+
+#### Controlled
+
+```tsx
+const [plan, setPlan] = useState('monthly');
+
+<RadioGroup value={plan} onValueChange={setPlan}>
+  <RadioGroupItem value="monthly" label="Mensal" id="monthly" />
+  <RadioGroupItem value="yearly" label="Anual" id="yearly" />
+</RadioGroup>
+```
+
+---
+
+### Switch
+
+Interruptor de alternancia (toggle) para estados on/off.
+
+#### Import
+
+```tsx
+import { Switch } from '@clickmax/design-system';
+```
+
+#### Props
+
+| Prop | Tipo | Default | Descricao |
+|------|------|---------|-----------|
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Tamanho do switch |
+| `label` | `string` | - | Label ao lado do switch |
+| `description` | `string` | - | Texto descritivo abaixo do label |
+| `checked` | `boolean` | - | Estado do switch (controlled) |
+| `defaultChecked` | `boolean` | - | Estado inicial (uncontrolled) |
+| `onCheckedChange` | `(checked: boolean) => void` | - | Callback de mudanca |
+| `disabled` | `boolean` | `false` | Estado desabilitado |
+
+#### Tamanhos
+
+```tsx
+<Switch size="sm" label="Small (32x18px)" />
+<Switch size="md" label="Medium (40x24px)" />
+<Switch size="lg" label="Large (48x28px)" />
+```
+
+#### Estados
+
+```tsx
+// On
+<Switch checked={true} label="Notificacoes ativadas" />
+
+// Off
+<Switch checked={false} label="Modo escuro" />
+
+// Disabled
+<Switch disabled label="Funcionalidade bloqueada" />
+```
+
+#### Com Descricao
+
+```tsx
+<Switch
+  label="Notificacoes por email"
+  description="Receba atualizacoes sobre sua conta por email."
+  id="email-notif"
+/>
+```
+
+#### Controlled
+
+```tsx
+const [notifications, setNotifications] = useState(false);
+
+<Switch
+  checked={notifications}
+  onCheckedChange={setNotifications}
+  label="Notificacoes"
+/>
+```
+
+---
+
+### Textarea
+
+Campo de entrada de texto multi-linha com validacao.
+
+#### Import
+
+```tsx
+import { Textarea } from '@clickmax/design-system';
+```
+
+#### Props
+
+| Prop | Tipo | Default | Descricao |
+|------|------|---------|-----------|
+| `textareaSize` | `'sm' \| 'md' \| 'lg'` | `'md'` | Altura minima |
+| `variant` | `'default' \| 'error'` | `'default'` | Estilo visual |
+| `label` | `string` | - | Label do campo |
+| `description` | `string` | - | Texto de ajuda |
+| `error` | `string` | - | Mensagem de erro |
+| `disabled` | `boolean` | `false` | Estado desabilitado |
+
+#### Tamanhos
+
+```tsx
+<Textarea textareaSize="sm" label="Small" placeholder="80px min-height" />
+<Textarea textareaSize="md" label="Medium" placeholder="100px min-height" />
+<Textarea textareaSize="lg" label="Large" placeholder="120px min-height" />
+```
+
+#### Uso Basico
+
+```tsx
+<Textarea
+  label="Mensagem"
+  placeholder="Digite sua mensagem..."
+/>
+```
+
+#### Com Descricao
+
+```tsx
+<Textarea
+  label="Bio"
+  description="Conte um pouco sobre voce"
+  placeholder="Eu sou..."
+/>
+```
+
+#### Com Erro
+
+```tsx
+<Textarea
+  label="Comentario"
+  error="Comentario deve ter no minimo 10 caracteres"
+  placeholder="Adicione seu comentario..."
+/>
+```
+
+#### Com Limite de Caracteres
+
+```tsx
+<Textarea
+  label="Tweet"
+  description="200 caracteres maximo"
+  placeholder="O que esta acontecendo?"
+  maxLength={200}
+/>
+```
+
+#### Acessibilidade
+
+- IDs unicos gerados automaticamente com `useId()`
+- `aria-describedby` para descricao e erro
+- `aria-invalid` quando em estado de erro
+- Labels associados corretamente
+- Redimensionavel verticalmente (resize-y)
+
+---
+
 ## Padroes de Composicao
 
 ### Formulario Completo

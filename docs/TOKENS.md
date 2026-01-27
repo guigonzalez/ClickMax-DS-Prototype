@@ -245,6 +245,58 @@ Documentacao completa de todos os tokens do Design System.
 
 ---
 
+## Component Tokens
+
+### Checkbox
+
+| Token | Valor | Uso |
+|-------|-------|-----|
+| `--checkbox-size-sm` | 16px | Checkbox pequeno |
+| `--checkbox-size-md` | 20px | Checkbox medio |
+| `--checkbox-size-lg` | 24px | Checkbox grande |
+| `--checkbox-icon-size-sm` | 12px | Icone pequeno |
+| `--checkbox-icon-size-md` | 14px | Icone medio |
+| `--checkbox-icon-size-lg` | 16px | Icone grande |
+| `--checkbox-border-width` | 2px | Largura da borda |
+
+### Radio
+
+| Token | Valor | Uso |
+|-------|-------|-----|
+| `--radio-size-sm` | 16px | Radio pequeno |
+| `--radio-size-md` | 20px | Radio medio |
+| `--radio-size-lg` | 24px | Radio grande |
+| `--radio-indicator-size-sm` | 8px | Indicador pequeno |
+| `--radio-indicator-size-md` | 10px | Indicador medio |
+| `--radio-indicator-size-lg` | 12px | Indicador grande |
+| `--radio-border-width` | 2px | Largura da borda |
+
+### Switch
+
+| Token | Valor | Uso |
+|-------|-------|-----|
+| `--switch-width-sm` | 32px | Switch pequeno width |
+| `--switch-height-sm` | 18px | Switch pequeno height |
+| `--switch-thumb-size-sm` | 14px | Thumb pequeno |
+| `--switch-width-md` | 40px | Switch medio width |
+| `--switch-height-md` | 24px | Switch medio height |
+| `--switch-thumb-size-md` | 20px | Thumb medio |
+| `--switch-width-lg` | 48px | Switch grande width |
+| `--switch-height-lg` | 28px | Switch grande height |
+| `--switch-thumb-size-lg` | 24px | Thumb grande |
+
+### Textarea
+
+| Token | Valor | Uso |
+|-------|-------|-----|
+| `--textarea-padding-x` | 12px | Padding horizontal |
+| `--textarea-padding-y` | 8px | Padding vertical |
+| `--textarea-min-height-sm` | 80px | Altura minima pequena |
+| `--textarea-min-height-md` | 100px | Altura minima media |
+| `--textarea-min-height-lg` | 120px | Altura minima grande |
+
+---
+
 ## Uso
 
 ### Em Componentes React

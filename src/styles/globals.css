@@ -52,6 +52,42 @@
 
   --spacing-badge-x: 10px;
   --spacing-badge-y: 2px;
+
+  /* === Checkbox === */
+  --checkbox-size-sm: 16px;
+  --checkbox-size-md: 20px;
+  --checkbox-size-lg: 24px;
+  --checkbox-icon-size-sm: 12px;
+  --checkbox-icon-size-md: 14px;
+  --checkbox-icon-size-lg: 16px;
+  --checkbox-border-width: 2px;
+
+  /* === Radio === */
+  --radio-size-sm: 16px;
+  --radio-size-md: 20px;
+  --radio-size-lg: 24px;
+  --radio-indicator-size-sm: 8px;
+  --radio-indicator-size-md: 10px;
+  --radio-indicator-size-lg: 12px;
+  --radio-border-width: 2px;
+
+  /* === Switch === */
+  --switch-width-sm: 32px;
+  --switch-height-sm: 18px;
+  --switch-thumb-size-sm: 14px;
+  --switch-width-md: 40px;
+  --switch-height-md: 24px;
+  --switch-thumb-size-md: 20px;
+  --switch-width-lg: 48px;
+  --switch-height-lg: 28px;
+  --switch-thumb-size-lg: 24px;
+
+  /* === Textarea === */
+  --textarea-padding-x: 12px;
+  --textarea-padding-y: 8px;
+  --textarea-min-height-sm: 80px;
+  --textarea-min-height-md: 100px;
+  --textarea-min-height-lg: 120px;
 }
 
 /* ===== Design Tokens as CSS Variables ===== */
