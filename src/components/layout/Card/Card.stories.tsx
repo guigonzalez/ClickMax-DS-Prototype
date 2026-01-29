@@ -7,9 +7,9 @@ import {
   CardContent,
   CardFooter,
 } from './Card';
-import { Button } from '../../primitives/Button';
-import { Input } from '../../primitives/Input';
-import { Badge } from '../../primitives/Badge';
+import { Button } from '../../foundation/Button';
+import { Input } from '../../forms/Input';
+import { Badge } from '../../foundation/Badge';
 import {
   Bell,
   CheckCircle2,
@@ -28,7 +28,7 @@ import {
 } from 'lucide-react';
 
 const meta: Meta<typeof Card> = {
-  title: 'Layout/Card',
+  title: 'C. Components/Card',
   component: Card,
   tags: ['autodocs'],
   parameters: {
@@ -205,8 +205,8 @@ export const ProfileCard: Story = {
     <Card className="w-[350px]">
       <CardHeader>
         <div className="flex items-center gap-4">
-          <div className="h-16 w-16 rounded-full bg-interactive-default flex items-center justify-center">
-            <User className="h-8 w-8 text-text-accent" />
+          <div className="h-16 w-16 rounded-full bg-interactive-action-default flex items-center justify-center">
+            <User className="h-8 w-8 text-neutral-900" />
           </div>
           <div>
             <CardTitle>João Silva</CardTitle>

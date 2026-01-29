@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
 import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from '@/lib/utils';
+import { cn } from '@/utils';
 
 const radioGroupVariants = cva('grid gap-3');
 
@@ -10,9 +10,9 @@ const radioItemVariants = cva(
     'aspect-square rounded-full',
     'border-2 border-border-strong',
     'transition-colors duration-150',
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-interactive-default',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-interactive-primary-focus',
     'disabled:cursor-not-allowed disabled:opacity-50',
-    'data-[state=checked]:border-interactive-default',
+    'data-[state=checked]:border-interactive-primary-default',
   ],
   {
     variants: {
@@ -32,7 +32,7 @@ const radioIndicatorVariants = cva(
   [
     'flex items-center justify-center',
     'after:content-[""] after:block after:rounded-full',
-    'after:bg-interactive-default',
+    'after:bg-interactive-primary-default',
   ],
   {
     variants: {
@@ -102,13 +102,21 @@ const RadioGroupItem = forwardRef<
           {label && (
             <label
               htmlFor={props.id}
-              className="text-sm font-medium text-text-primary cursor-pointer select-none"
+              // Using Body 14 Medium tokens
+              className="text-[0.875rem] font-medium leading-[1.5] text-text-primary cursor-pointer select-none"
+              style={{ fontFamily: 'var(--font-body)' }}
             >
               {label}
             </label>
           )}
           {description && (
-            <p className="text-sm text-text-secondary">{description}</p>
+            <p
+              // Using Body 14 Regular tokens
+              className="text-[0.875rem] font-normal leading-[1.5] text-text-secondary"
+              style={{ fontFamily: 'var(--font-body)' }}
+            >
+              {description}
+            </p>
           )}
         </div>
       </div>

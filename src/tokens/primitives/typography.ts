@@ -5,41 +5,40 @@
 
 export const typography = {
   fontFamily: {
-    sans: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    heading: '"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+    body: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     mono: '"JetBrains Mono", "Fira Code", Consolas, monospace',
   },
   fontSize: {
-    xs: '0.75rem', // 12px
-    sm: '0.875rem', // 14px
-    base: '1rem', // 16px
-    lg: '1.125rem', // 18px
-    xl: '1.25rem', // 20px
-    '2xl': '1.5rem', // 24px
-    '3xl': '1.875rem', // 30px
-    '4xl': '2.25rem', // 36px
-    '5xl': '3rem', // 48px
+    8: '0.5rem', // 8px
+    10: '0.625rem', // 10px
+    12: '0.75rem', // 12px
+    14: '0.875rem', // 14px
+    16: '1rem', // 16px
+    18: '1.125rem', // 18px
+    20: '1.25rem', // 20px
+    24: '1.5rem', // 24px
+    32: '2rem', // 32px
+    40: '2.5rem', // 40px
+    48: '3rem', // 48px
+    56: '3.5rem', // 56px
   },
   fontWeight: {
-    normal: '400',
+    regular: '400',
     medium: '500',
     semibold: '600',
     bold: '700',
   },
   lineHeight: {
-    none: '1',
-    tight: '1.25',
-    snug: '1.375',
-    normal: '1.5',
-    relaxed: '1.625',
-    loose: '2',
+    100: '1', // 100%
+    120: '1.2', // 120%
+    140: '1.4', // 140%
+    150: '1.5', // 150%
   },
   letterSpacing: {
-    tighter: '-0.05em',
-    tight: '-0.025em',
-    normal: '0em',
-    wide: '0.025em',
-    wider: '0.05em',
-    widest: '0.1em',
+    0: '0em', // 0%
+    0.5: '0.005em', // 0.5%
+    1: '0.01em', // 1%
   },
 } as const;
 

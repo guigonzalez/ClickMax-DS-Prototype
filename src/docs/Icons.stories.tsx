@@ -49,7 +49,7 @@ import {
 } from 'lucide-react';
 
 const meta: Meta = {
-  title: 'Tokens/Icons',
+  title: 'B. Foundation/Icons',
   parameters: {
     layout: 'padded',
     docs: {
@@ -372,7 +372,7 @@ export const Usage: Story = {
             Ícones em Botões
           </h3>
           <div className="flex gap-4">
-            <button className="inline-flex items-center gap-2 px-4 h-10 bg-interactive-default text-text-accent rounded-lg hover:bg-interactive-hover transition-colors">
+            <button className="inline-flex items-center gap-2 px-4 h-10 bg-interactive-primary-default text-white rounded-lg hover:bg-interactive-primary-hover transition-colors">
               <Plus className="h-5 w-5" />
               Criar Novo
             </button>
@@ -434,7 +434,7 @@ export const Usage: Story = {
           <nav className="space-y-1 w-64">
             <a
               href="#"
-              className="flex items-center gap-3 px-4 py-2 rounded-lg bg-interactive-default text-text-accent"
+              className="flex items-center gap-3 px-4 py-2 rounded-lg bg-interactive-action-default text-neutral-900"
             >
               <Home className="h-5 w-5" />
               <span className="text-sm font-medium">Home</span>
@@ -464,7 +464,7 @@ export const Usage: Story = {
             href="https://lucide.dev/icons"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-interactive-default hover:underline"
+            className="text-interactive-action-default hover:underline"
           >
             lucide.dev/icons
           </a>{' '}

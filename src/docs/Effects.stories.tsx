@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta = {
-  title: 'Tokens/Effects',
+  title: 'B. Foundation/Effects',
   parameters: {
     layout: 'padded',
   },
@@ -43,7 +43,7 @@ const RadiusBox = ({
 }) => (
   <div className="flex items-center gap-6 py-3">
     <div
-      className={`h-16 w-16 bg-interactive-default ${radiusClass}`}
+      className={`h-16 w-16 bg-interactive-action-default ${radiusClass}`}
     />
     <div>
       <p className="text-sm font-medium text-text-primary font-mono">{name}</p>

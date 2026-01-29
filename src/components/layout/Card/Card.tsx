@@ -1,5 +1,5 @@
 import { forwardRef, type HTMLAttributes } from 'react';
-import { cn } from '@/lib/utils';
+import { cn } from '@/utils';
 
 const Card = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
@@ -34,7 +34,9 @@ const CardTitle = forwardRef<
 >(({ className, ...props }, ref) => (
   <h3
     ref={ref}
-    className={cn('text-lg font-semibold leading-normal text-text-primary', className)}
+    // Using Subheading 18 tokens
+    className={cn('text-[1.125rem] font-bold leading-[1.2] tracking-[0.005em] text-text-primary', className)}
+    style={{ fontFamily: 'var(--font-heading)' }}
     {...props}
   />
 ));
@@ -44,7 +46,13 @@ const CardDescription = forwardRef<
   HTMLParagraphElement,
   HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
-  <p ref={ref} className={cn('text-sm text-text-secondary', className)} {...props} />
+  <p
+    ref={ref}
+    // Using Body 14 Regular tokens
+    className={cn('text-[0.875rem] font-normal leading-[1.5] text-text-secondary', className)}
+    style={{ fontFamily: 'var(--font-body)' }}
+    {...props}
+  />
 ));
 CardDescription.displayName = 'CardDescription';
 

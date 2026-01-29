@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WCAG Contrast Accessibility Report - ClickMax Design System</title>
+<script>{;const saved = localStorage.getItem('rspress-theme-appearance');const preferDark = window.matchMedia('(prefers-color-scheme: dark)').matches;const isDark = !saved || saved === 'auto' ? preferDark : saved === 'dark';document.documentElement.classList.toggle('dark', isDark);document.documentElement.classList.toggle('rp-dark', isDark);document.documentElement.style.colorScheme = isDark ? 'dark' : 'light';}</script>
+<link href="/static/css/styles.1524db1f.css" rel="stylesheet">
+<script defer src="/static/js/styles.ba3c125f.js"></script>
+<script defer src="/static/js/lib-react.9377a7ca.js"></script>
+<script defer src="/static/js/lib-router.a11fd6bb.js"></script>
+<script defer src="/static/js/482.58c47de9.js"></script>
+<script defer src="/static/js/index.fba177e6.js"></script>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Rspress v2.0.0-beta.21">
+<meta name="description" content="Modern Design System built with React 19, Tailwind CSS 4, and Radix UI"></head>
+
+  <body>
+    <div id="root"><div class="navContainer_d18b1 rspress-nav rp-px-6  sticky_ddfa7"><div class="container_e4235 rp-flex rp-justify-between rp-items-center rp-h-full"><div class="navBarTitle_c5f07"><a href="/index.html" class="link_a7cea rp-flex rp-items-center rp-w-full rp-h-full rp-text-base rp-font-semibold rp-transition-opacity rp-duration-300 hover:rp-opacity-60"><span>ClickMax Design System</span></a></div><div class="rp-flex rp-flex-1 rp-justify-end rp-items-center"><div class="rightNav_a2fea"><div class="rp-flex sm:rp-flex-1 rp-items-center sm:rp-pl-4 sm:rp-pr-2"><div class="rspress-nav-search-button navSearchButton_df1fb"><button><svg width="18" height="18" viewBox="0 0 32 32"><path fill="var(--rp-c-gray)" d="m29 27.586-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9 9.01 9.01 0 0 1-9-9"></path></svg><p class="searchWord_af2c1">Search</p><div style="opacity:0"><span></span><span>K</span></div></button></div><div class="mobileNavSearchButton_d85a9"><svg width="24" height="24" viewBox="0 0 32 32"><path fill="var(--rp-c-gray)" d="m29 27.586-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9 9.01 9.01 0 0 1-9-9"></path></svg></div></div><div class="rspress-nav-menu rp-flex rp-justify-around rp-items-center rp-text-sm rp-font-bold rp-h-14"><a href="/guide/getting-started.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  rp-text-sm rp-font-medium rp-mx-0.5 rp-px-3 rp-py-2 rp-flex rp-items-center">Guide</div></a><a href="/components/foundation/button.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  rp-text-sm rp-font-medium rp-mx-0.5 rp-px-3 rp-py-2 rp-flex rp-items-center">Components</div></a><a href="/tokens/colors.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  rp-text-sm rp-font-medium rp-mx-0.5 rp-px-3 rp-py-2 rp-flex rp-items-center">Tokens</div></a><a href="/examples/forms.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  rp-text-sm rp-font-medium rp-mx-0.5 rp-px-3 rp-py-2 rp-flex rp-items-center">Examples</div></a><a href="/project/status.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  rp-text-sm rp-font-medium rp-mx-0.5 rp-px-3 rp-py-2 rp-flex rp-items-center">Project</div></a><a href="https://github.com/guigonzalez/ClickMax-DS-Prototype" target="_blank" rel="noopener noreferrer" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  rp-text-sm rp-font-medium rp-mx-0.5 rp-px-3 rp-py-2 rp-flex rp-items-center">GitHub</div></a></div><div class="rp-flex rp-items-center rp-justify-center rp-flex-row"><div class="rp-mx-2"><div class="md:rp-mr-2 rspress-nav-appearance"><div class="rp-p-1 rp-border rp-border-solid rp-border-gray-300 rp-text-gray-400 rp-cursor-pointer rp-rounded-md hover:rp-border-gray-600 hover:rp-text-gray-600 dark:hover:rp-border-gray-200 dark:hover:rp-text-gray-200 rp-transition-all rp-duration-300 rp-w-7 rp-h-7"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" class="dark:rp-hidden" width="18" height="18" fill="currentColor"><path d="M12 18c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6m0-10c-2.2 0-4 1.8-4 4s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4M12 4c-.6 0-1-.4-1-1V1c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1M12 24c-.6 0-1-.4-1-1v-2c0-.6.4-1 1-1s1 .4 1 1v2c0 .6-.4 1-1 1M5.6 6.6c-.3 0-.5-.1-.7-.3L3.5 4.9c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4-.1.2-.4.3-.7.3M19.8 20.8c-.3 0-.5-.1-.7-.3l-1.4-1.4c-.4-.4-.4-1 0-1.4s1-.4 1.4 0l1.4 1.4c.4.4.4 1 0 1.4-.2.2-.5.3-.7.3M3 13H1c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1s-.4 1-1 1M23 13h-2c-.6 0-1-.4-1-1s.4-1 1-1h2c.6 0 1 .4 1 1s-.4 1-1 1M4.2 20.8c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-1.4 1.4c-.2.2-.4.3-.7.3M18.4 6.6c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l1.4-1.4c.4-.4 1-.4 1.4 0s.4 1 0 1.4l-1.4 1.4c-.2.2-.5.3-.7.3"></path></svg><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" viewBox="0 0 24 24" class="rp-hidden dark:rp-block" width="18" height="18" fill="currentColor"><path d="M12.1 22h-.9c-5.5-.5-9.5-5.4-9-10.9.4-4.8 4.2-8.6 9-9 .4 0 .8.2 1 .5s.2.8-.1 1.1c-2 2.7-1.4 6.4 1.3 8.4 2.1 1.6 5 1.6 7.1 0 .3-.2.7-.3 1.1-.1.3.2.5.6.5 1-.2 2.7-1.5 5.1-3.6 6.8-1.9 1.4-4.1 2.2-6.4 2.2M9.3 4.4c-2.9 1-5 3.6-5.2 6.8-.4 4.4 2.8 8.3 7.2 8.7 2.1.2 4.2-.4 5.8-1.8 1.1-.9 1.9-2.1 2.4-3.4-2.5.9-5.3.5-7.5-1.1-2.8-2.2-3.9-5.9-2.7-9.2"></path></svg></div></div></div><div class="social-links menu-item_e90a6 rp-flex rp-items-center rp-justify-center rp-relative"><div class="rp-flex rp-items-center rp-justify-center rp-h-full rp-gap-x-4 rp-transition-colors rp-duration-300 md:rp-mr-2"><a href="https://github.com/guigonzalez/ClickMax-DS-Prototype" target="_blank" rel="noopener noreferrer" class="social-links"><div class="social-links-icon_a4ad0"><div><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a></div></div></div></div><div class="mobileNavMenu_e7045"><div class="rspress-nav-search-button navSearchButton_df1fb"><button><svg width="18" height="18" viewBox="0 0 32 32"><path fill="var(--rp-c-gray)" d="m29 27.586-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9 9.01 9.01 0 0 1-9-9"></path></svg><p class="searchWord_af2c1">Search</p><div style="opacity:0"><span></span><span>K</span></div></button></div><div class="mobileNavSearchButton_d85a9"><svg width="24" height="24" viewBox="0 0 32 32"><path fill="var(--rp-c-gray)" d="m29 27.586-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9 9.01 9.01 0 0 1-9-9"></path></svg></div><div class="navScreen_ec30c  rspress-nav-screen" id="navScreen"><div class="container_c935d"><div class="navMenu_b887b"><div class="navMenuItem_e7978 rp-w-full"><a href="/guide/getting-started.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  rp-text-sm rp-font-medium rp-mx-0.5 rp-px-3 rp-py-2 rp-flex rp-items-center">Guide</div></a></div><div class="navMenuItem_e7978 rp-w-full"><a href="/components/foundation/button.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  rp-text-sm rp-font-medium rp-mx-0.5 rp-px-3 rp-py-2 rp-flex rp-items-center">Components</div></a></div><div class="navMenuItem_e7978 rp-w-full"><a href="/tokens/colors.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  rp-text-sm rp-font-medium rp-mx-0.5 rp-px-3 rp-py-2 rp-flex rp-items-center">Tokens</div></a></div><div class="navMenuItem_e7978 rp-w-full"><a href="/examples/forms.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  rp-text-sm rp-font-medium rp-mx-0.5 rp-px-3 rp-py-2 rp-flex rp-items-center">Examples</div></a></div><div class="navMenuItem_e7978 rp-w-full"><a href="/project/status.html" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  rp-text-sm rp-font-medium rp-mx-0.5 rp-px-3 rp-py-2 rp-flex rp-items-center">Project</div></a></div><div class="navMenuItem_e7978 rp-w-full"><a href="https://github.com/guigonzalez/ClickMax-DS-Prototype" target="_blank" rel="noopener noreferrer" class="link_a7cea "><div class="rspress-nav-menu-item singleItem_c1154  rp-text-sm rp-font-medium rp-mx-0.5 rp-px-3 rp-py-2 rp-flex rp-items-center">GitHub</div></a></div></div><div class="rp-flex rp-items-center rp-justify-center rp-flex-col rp-gap-2"><div class="rp-mt-2 navAppearance_bf893 rp-flex rp-justify-center"></div><div class="social-links menu-item_e90a6 rp-flex rp-items-center rp-justify-center rp-relative"><div class="rp-flex rp-items-center rp-justify-center rp-h-full rp-gap-x-4 rp-transition-colors rp-duration-300 md:rp-mr-2"><a href="https://github.com/guigonzalez/ClickMax-DS-Prototype" target="_blank" rel="noopener noreferrer" class="social-links"><div class="social-links-icon_a4ad0"><div><svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div></div></a></div></div></div></div></div><button aria-label="mobile hamburger" class=" rspress-mobile-hamburger navHamburger_ac64c rp-text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="currentColor"><circle cx="8" cy="16" r="2" fill="currentColor"></circle><circle cx="16" cy="16" r="2" fill="currentColor"></circle><circle cx="24" cy="16" r="2" fill="currentColor"></circle></svg></button></div></div></div></div><section><div class="docLayout_af141 rp-pt-0"><aside class="sidebar_dd719 rspress-sidebar "><div class="navTitleMask_fb17c"><div class="navBarTitle_c5f07"><a href="/index.html" class="link_a7cea rp-flex rp-items-center rp-w-full rp-h-full rp-text-base rp-font-semibold rp-transition-opacity rp-duration-300 hover:rp-opacity-60"><span>ClickMax Design System</span></a></div></div><div class="rspress-scrollbar sidebarContent_da296"><nav class="rp-pb-2"><section class="rspress-sidebar-section rp-mt-0.5 rp-block" style="margin-left:0"><div class="rspress-sidebar-collapse rp-flex rp-justify-between rp-items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="rp-py-2 rp-px-3 rp-text-sm rp-font-medium rp-flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="rp-flex rp-items-center rp-justify-center" style="font-size:14px">Project Information</span></h2><div class="collapseContainer_d6e4e rp-p-2 rp-rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="rp-transition-all rp-duration-300 rp-ease-in-out" style="overflow:hidden"><div class="rspress-sidebar-group rp-transition-opacity rp-duration-500 rp-ease-in-out" style="opacity:1;margin-left:12px"><div class="rspress-sidebar-item"><a href="/project/status.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e rp-mt-0.5 rp-py-2 rp-px-3 rp-font-medium rp-flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>Project Status</span></div></a></div><div class="rspress-sidebar-item"><a href="/project/accessibility.html" class="link_a7cea menuLink_bb039"><div class="menuItemActive_de63c rspress-sidebar-item-active rp-mt-0.5 rp-py-2 rp-px-3 rp-font-medium rp-flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>Accessibility</span></div></a></div></div></div></section><section class="rspress-sidebar-section rp-mt-0.5 rp-block" style="margin-left:0"><div class="rspress-sidebar-collapse rp-flex rp-justify-between rp-items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="rp-py-2 rp-px-3 rp-text-sm rp-font-medium rp-flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="rp-flex rp-items-center rp-justify-center" style="font-size:14px">Reorganization</span></h2><div class="collapseContainer_d6e4e rp-p-2 rp-rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="rp-transition-all rp-duration-300 rp-ease-in-out" style="overflow:hidden"><div class="rspress-sidebar-group rp-transition-opacity rp-duration-500 rp-ease-in-out" style="opacity:1;margin-left:12px"><div class="rspress-sidebar-item"><a href="/project/reorganization/overview.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e rp-mt-0.5 rp-py-2 rp-px-3 rp-font-medium rp-flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>Overview</span></div></a></div><div class="rspress-sidebar-item"><a href="/project/reorganization/plan.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e rp-mt-0.5 rp-py-2 rp-px-3 rp-font-medium rp-flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>Plan</span></div></a></div><div class="rspress-sidebar-item"><a href="/project/reorganization/summary.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e rp-mt-0.5 rp-py-2 rp-px-3 rp-font-medium rp-flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>Summary</span></div></a></div><div class="rspress-sidebar-item"><a href="/project/reorganization/complete.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e rp-mt-0.5 rp-py-2 rp-px-3 rp-font-medium rp-flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>Complete</span></div></a></div></div></div></section><section class="rspress-sidebar-section rp-mt-0.5 rp-block" style="margin-left:0"><div class="rspress-sidebar-collapse rp-flex rp-justify-between rp-items-center menuItem_ac22e" style="border-radius:0 var(--rp-radius) var(--rp-radius) 0;cursor:pointer"><h2 class="rp-py-2 rp-px-3 rp-text-sm rp-font-medium rp-flex" style="font-size:14px;padding-left:24px;font-weight:bold"><span class="rp-flex rp-items-center rp-justify-center" style="font-size:14px">Improvements</span></h2><div class="collapseContainer_d6e4e rp-p-2 rp-rounded-xl"><div style="cursor:pointer;transition:transform 0.2s ease-out;transform:rotate(90deg)"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M22 16 12 26l-1.4-1.4 8.6-8.6-8.6-8.6L12 6z"></path></svg></div></div></div><div class="rp-transition-all rp-duration-300 rp-ease-in-out" style="overflow:hidden"><div class="rspress-sidebar-group rp-transition-opacity rp-duration-500 rp-ease-in-out" style="opacity:1;margin-left:12px"><div class="rspress-sidebar-item"><a href="/project/quick-wins.html" class="link_a7cea menuLink_bb039"><div class="menuItem_ac22e rp-mt-0.5 rp-py-2 rp-px-3 rp-font-medium rp-flex" style="font-size:13px;margin-left:18px;border-radius:0 var(--rp-radius) var(--rp-radius) 0"><span>Quick Wins</span></div></a></div></div></div></section></nav></div></aside><div class="rp-flex-1 rp-relative rp-min-w-0"><div class="rspress-sidebar-menu-container no-toc"><div class="rspress-sidebar-menu"><button type="button" class="rp-flex rp-items-center rp-justify-center rp-mr-auto"><div class="rp-text-md rp-mr-2"><svg width="1em" height="1em" viewBox="0 0 32 32"><path fill="currentColor" d="M4 6h24v2H4zm0 18h24v2H4zm0-12h24v2H4zm0 6h24v2H4z"></path></svg></div><span class="rp-text-sm">Menu</span></button></div></div><div class="content_ff766 rspress-doc-container rp-flex"><div class="rp-flex-1 rp-overflow-x-auto"><div class="rspress-doc"><!--$?--><template id="B:0"></template><!--/$--></div><div class="rspress-doc-footer"><footer class="rp-mt-8"><div class="xs:rp-flex rp-pb-5 rp-px-2 rp-justify-end rp-items-center"></div><div class="rp-flex rp-flex-col"></div><div class="rp-flex rp-flex-col sm:rp-flex-row sm:rp-justify-around rp-gap-4 rp-pt-6"><div class="prev_c92d1 rp-flex rp-flex-col"><a href="/project/status.html" class="link_a7cea pager-link_e0d2d"><span class="desc_dcc01">Previous Page</span><span class="title_a3acb">Project Status</span></a></div><div class="next_c11be rp-flex rp-flex-col"><a href="/project/reorganization/overview.html" class="link_a7cea pager-link_e0d2d next_ad355"><span class="desc_dcc01">Next Page</span><span class="title_a3acb">Overview</span></a></div></div></footer></div></div><div class="aside-container_bc5fa"></div></div></div></div></section><script>requestAnimationFrame(function(){$RT=performance.now()});</script><div hidden id="S:0"><h1 id="wcag-contrast-accessibility-report" class="rspress-doc-title rp-text-3xl rp-mb-10 rp-leading-10 rp-tracking-tight title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#wcag-contrast-accessibility-report">#</a>WCAG Contrast Accessibility Report</h1>
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">Date</strong>: January 28, 2026
+<strong class="rp-font-semibold">Standard</strong>: WCAG 2.1 Level AA
+<strong class="rp-font-semibold">Tested By</strong>: Design System Team</p>
+<h2 id="executive-summary" class="rspress-doc-outline rp-mt-12 rp-mb-6 rp-pt-8 rp-text-2xl rp-tracking-tight rp-border-t rp-border-divider-light title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#executive-summary">#</a>Executive Summary</h2>
+<p class="rp-my-4 rp-leading-7">This report documents the WCAG AA contrast testing results for the ClickMax Design System color palette. Out of 18 critical color combinations tested, <strong class="rp-font-semibold">12 passed</strong> and <strong class="rp-font-semibold">9 failed</strong> WCAG AA requirements.</p>
+<h3 id="key-findings" class="rspress-doc-outline rp-mt-10 rp-mb-2 rp-leading-7 rp-text-xl title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#key-findings">#</a>Key Findings</h3>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2">✅ <strong class="rp-font-semibold">Strong Performance</strong>: Primary text, brand colors (Fluor), and dark mode combinations exceed WCAG AAA standards</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">⚠️ <strong class="rp-font-semibold">Issues Found</strong>: Some feedback colors (Azure, Cadmium) and tertiary/disabled text fail WCAG AA</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">📊 <strong class="rp-font-semibold">Pass Rate</strong>: 66.7% (12/18 combinations)</li>
+</ul>
+<h2 id="test-results" class="rspress-doc-outline rp-mt-12 rp-mb-6 rp-pt-8 rp-text-2xl rp-tracking-tight rp-border-t rp-border-divider-light title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#test-results">#</a>Test Results</h2>
+<h3 id="-passing-combinations-12" class="rspress-doc-outline rp-mt-10 rp-mb-2 rp-leading-7 rp-text-xl title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#-passing-combinations-12">#</a>✅ Passing Combinations (12)</h3>
+<h4 id="aaa-level-9-combinations" class="rspress-doc-outline rp-mt-8 rp-leading-6 rp-text-lg title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#aaa-level-9-combinations">#</a>AAA Level (9 combinations)</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="rp-block rp-border-collapse rp-text-base rp-my-5 rp-overflow-x-auto rp-leading-7 rp-border-gray-light-3 dark:rp-border-divider"><thead><tr class="rp-border rp-border-solid rp-transition-colors rp-duration-500 even:rp-bg-soft rp-border-gray-light-3 dark:rp-border-divider"><th class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-text-text-1 rp-text-base rp-font-semibold rp-border-gray-light-3 dark:rp-border-divider">Combination</th><th class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-text-text-1 rp-text-base rp-font-semibold rp-border-gray-light-3 dark:rp-border-divider">Contrast Ratio</th><th class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-text-text-1 rp-text-base rp-font-semibold rp-border-gray-light-3 dark:rp-border-divider">Notes</th></tr></thead><tbody><tr class="rp-border rp-border-solid rp-transition-colors rp-duration-500 even:rp-bg-soft rp-border-gray-light-3 dark:rp-border-divider"><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Primary text on white (<code>neutral-900</code> / <code>neutral-0</code>)</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider"><strong class="rp-font-semibold">16.15:1</strong></td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Excellent readability</td></tr><tr class="rp-border rp-border-solid rp-transition-colors rp-duration-500 even:rp-bg-soft rp-border-gray-light-3 dark:rp-border-divider"><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Dark text on Fluor brand (<code>neutral-900</code> / <code>fluor-500</code>)</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider"><strong class="rp-font-semibold">13.92:1</strong></td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Brand button text - excellent</td></tr><tr class="rp-border rp-border-solid rp-transition-colors rp-duration-500 even:rp-bg-soft rp-border-gray-light-3 dark:rp-border-divider"><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Fluor on dark background (<code>fluor-500</code> / <code>neutral-900</code>)</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider"><strong class="rp-font-semibold">13.92:1</strong></td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Dark mode accent - excellent</td></tr><tr class="rp-border rp-border-solid rp-transition-colors rp-duration-500 even:rp-bg-soft rp-border-gray-light-3 dark:rp-border-divider"><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Border strong on white (<code>neutral-800</code> / <code>neutral-0</code>)</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider"><strong class="rp-font-semibold">10.92:1</strong></td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Strong visual separation</td></tr><tr class="rp-border rp-border-solid rp-transition-colors rp-duration-500 even:rp-bg-soft rp-border-gray-light-3 dark:rp-border-divider"><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Info text on info bg (<code>purplish-800</code> / <code>purplish-50</code>)</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider"><strong class="rp-font-semibold">9.13:1</strong></td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Alert text - excellent</td></tr><tr class="rp-border rp-border-solid rp-transition-colors rp-duration-500 even:rp-bg-soft rp-border-gray-light-3 dark:rp-border-divider"><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Info on white (<code>purplish-500</code> / <code>neutral-0</code>)</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider"><strong class="rp-font-semibold">6.87:1</strong></td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">UI elements - excellent</td></tr><tr class="rp-border rp-border-solid rp-transition-colors rp-duration-500 even:rp-bg-soft rp-border-gray-light-3 dark:rp-border-divider"><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">[Dark] White text on dark (<code>neutral-0</code> / <code>neutral-900</code>)</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider"><strong class="rp-font-semibold">16.15:1</strong></td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Dark mode primary text</td></tr><tr class="rp-border rp-border-solid rp-transition-colors rp-duration-500 even:rp-bg-soft rp-border-gray-light-3 dark:rp-border-divider"><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">[Dark] Secondary text on dark (<code>neutral-400</code> / <code>neutral-900</code>)</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider"><strong class="rp-font-semibold">8.55:1</strong></td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Dark mode secondary text</td></tr><tr class="rp-border rp-border-solid rp-transition-colors rp-duration-500 even:rp-bg-soft rp-border-gray-light-3 dark:rp-border-divider"><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">[Dark] Fluor on dark (<code>fluor-500</code> / <code>neutral-900</code>)</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider"><strong class="rp-font-semibold">13.92:1</strong></td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Dark mode brand accent</td></tr></tbody></table>
+<h4 id="aa-level-3-combinations" class="rspress-doc-outline rp-mt-8 rp-leading-6 rp-text-lg title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#aa-level-3-combinations">#</a>AA Level (3 combinations)</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="rp-block rp-border-collapse rp-text-base rp-my-5 rp-overflow-x-auto rp-leading-7 rp-border-gray-light-3 dark:rp-border-divider"><thead><tr class="rp-border rp-border-solid rp-transition-colors rp-duration-500 even:rp-bg-soft rp-border-gray-light-3 dark:rp-border-divider"><th class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-text-text-1 rp-text-base rp-font-semibold rp-border-gray-light-3 dark:rp-border-divider">Combination</th><th class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-text-text-1 rp-text-base rp-font-semibold rp-border-gray-light-3 dark:rp-border-divider">Contrast Ratio</th><th class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-text-text-1 rp-text-base rp-font-semibold rp-border-gray-light-3 dark:rp-border-divider">Notes</th></tr></thead><tbody><tr class="rp-border rp-border-solid rp-transition-colors rp-duration-500 even:rp-bg-soft rp-border-gray-light-3 dark:rp-border-divider"><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Secondary text on white (<code>neutral-600</code> / <code>neutral-0</code>)</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider"><strong class="rp-font-semibold">5.02:1</strong></td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Meets AA minimum</td></tr><tr class="rp-border rp-border-solid rp-transition-colors rp-duration-500 even:rp-bg-soft rp-border-gray-light-3 dark:rp-border-divider"><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Error text on error bg (<code>torch-800</code> / <code>torch-50</code>)</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider"><strong class="rp-font-semibold">5.04:1</strong></td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Alert messages - passes</td></tr><tr class="rp-border rp-border-solid rp-transition-colors rp-duration-500 even:rp-bg-soft rp-border-gray-light-3 dark:rp-border-divider"><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Error on white (<code>torch-500</code> / <code>neutral-0</code>)</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider"><strong class="rp-font-semibold">3.91:1</strong></td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">UI elements only (3:1 min)</td></tr></tbody></table>
+<h3 id="-failing-combinations-9" class="rspress-doc-outline rp-mt-10 rp-mb-2 rp-leading-7 rp-text-xl title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#-failing-combinations-9">#</a>❌ Failing Combinations (9)</h3>
+<p class="rp-my-4 rp-leading-7">These combinations do not meet WCAG AA standards:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="rp-block rp-border-collapse rp-text-base rp-my-5 rp-overflow-x-auto rp-leading-7 rp-border-gray-light-3 dark:rp-border-divider"><thead><tr class="rp-border rp-border-solid rp-transition-colors rp-duration-500 even:rp-bg-soft rp-border-gray-light-3 dark:rp-border-divider"><th class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-text-text-1 rp-text-base rp-font-semibold rp-border-gray-light-3 dark:rp-border-divider">Combination</th><th class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-text-text-1 rp-text-base rp-font-semibold rp-border-gray-light-3 dark:rp-border-divider">Contrast Ratio</th><th class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-text-text-1 rp-text-base rp-font-semibold rp-border-gray-light-3 dark:rp-border-divider">Required</th><th class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-text-text-1 rp-text-base rp-font-semibold rp-border-gray-light-3 dark:rp-border-divider">Issue</th></tr></thead><tbody><tr class="rp-border rp-border-solid rp-transition-colors rp-duration-500 even:rp-bg-soft rp-border-gray-light-3 dark:rp-border-divider"><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Tertiary text on white (<code>neutral-500</code> / <code>neutral-0</code>)</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider"><strong class="rp-font-semibold">2.71:1</strong></td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">4.5:1</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Too light for body text</td></tr><tr class="rp-border rp-border-solid rp-transition-colors rp-duration-500 even:rp-bg-soft rp-border-gray-light-3 dark:rp-border-divider"><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Disabled text on white (<code>neutral-400</code> / <code>neutral-0</code>)</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider"><strong class="rp-font-semibold">1.89:1</strong></td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">3:1</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Intentionally low (disabled state)</td></tr><tr class="rp-border rp-border-solid rp-transition-colors rp-duration-500 even:rp-bg-soft rp-border-gray-light-3 dark:rp-border-divider"><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">White text on Azure (<code>neutral-0</code> / <code>azure-500</code>)</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider"><strong class="rp-font-semibold">2.47:1</strong></td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">4.5:1</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Secondary button text issue</td></tr><tr class="rp-border rp-border-solid rp-transition-colors rp-duration-500 even:rp-bg-soft rp-border-gray-light-3 dark:rp-border-divider"><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Azure on white (<code>azure-500</code> / <code>neutral-0</code>)</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider"><strong class="rp-font-semibold">2.47:1</strong></td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">3:1</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Success color too light</td></tr><tr class="rp-border rp-border-solid rp-transition-colors rp-duration-500 even:rp-bg-soft rp-border-gray-light-3 dark:rp-border-divider"><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Warning text on warning bg (<code>cadmium-800</code> / <code>cadmium-50</code>)</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider"><strong class="rp-font-semibold">1.94:1</strong></td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">4.5:1</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Warning alert text issue</td></tr><tr class="rp-border rp-border-solid rp-transition-colors rp-duration-500 even:rp-bg-soft rp-border-gray-light-3 dark:rp-border-divider"><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Warning on white (<code>cadmium-600</code> / <code>neutral-0</code>)</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider"><strong class="rp-font-semibold">1.42:1</strong></td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">3:1</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Warning color too bright</td></tr><tr class="rp-border rp-border-solid rp-transition-colors rp-duration-500 even:rp-bg-soft rp-border-gray-light-3 dark:rp-border-divider"><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Success text on success bg (<code>azure-800</code> / <code>azure-50</code>)</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider"><strong class="rp-font-semibold">4.04:1</strong></td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">4.5:1</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Just below AA threshold</td></tr><tr class="rp-border rp-border-solid rp-transition-colors rp-duration-500 even:rp-bg-soft rp-border-gray-light-3 dark:rp-border-divider"><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Success on white (<code>azure-500</code> / <code>neutral-0</code>)</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider"><strong class="rp-font-semibold">2.47:1</strong></td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">3:1</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Same as Azure issue</td></tr><tr class="rp-border rp-border-solid rp-transition-colors rp-duration-500 even:rp-bg-soft rp-border-gray-light-3 dark:rp-border-divider"><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Border default on white (<code>neutral-200</code> / <code>neutral-0</code>)</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider"><strong class="rp-font-semibold">1.16:1</strong></td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">3:1</td><td class="rp-border rp-border-solid rp-px-4 rp-py-2 rp-border-gray-light-3 dark:rp-border-divider">Subtle border (by design)</td></tr></tbody></table>
+<h2 id="detailed-analysis" class="rspress-doc-outline rp-mt-12 rp-mb-6 rp-pt-8 rp-text-2xl rp-tracking-tight rp-border-t rp-border-divider-light title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#detailed-analysis">#</a>Detailed Analysis</h2>
+<h3 id="1-brand-colors-fluor----excellent" class="rspress-doc-outline rp-mt-10 rp-mb-2 rp-leading-7 rp-text-xl title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#1-brand-colors-fluor----excellent">#</a>1. Brand Colors (Fluor) - ✅ Excellent</h3>
+<p class="rp-my-4 rp-leading-7">The <strong class="rp-font-semibold">Fluor</strong> brand color family performs exceptionally well:</p>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><code>neutral-900</code> on <code>fluor-500</code>: <strong class="rp-font-semibold">13.92:1 (AAA)</strong> - Perfect for button text</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><code>fluor-500</code> on <code>neutral-900</code>: <strong class="rp-font-semibold">13.92:1 (AAA)</strong> - Perfect for dark mode</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">Brand identity remains accessible and vibrant</li>
+</ul>
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">Recommendation</strong>: No changes needed. The Fluor palette is both distinctive and accessible.</p>
+<h3 id="2-neutral-scale---️-mixed" class="rspress-doc-outline rp-mt-10 rp-mb-2 rp-leading-7 rp-text-xl title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#2-neutral-scale---️-mixed">#</a>2. Neutral Scale - ⚠️ Mixed</h3>
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">Strong performers</strong>:</p>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><code>neutral-900</code> (primary text): <strong class="rp-font-semibold">16.15:1 (AAA)</strong></li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><code>neutral-600</code> (secondary text): <strong class="rp-font-semibold">5.02:1 (AA)</strong></li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><code>neutral-800</code> (strong borders): <strong class="rp-font-semibold">10.92:1 (AAA)</strong></li>
+</ul>
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">Issues</strong>:</p>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><code>neutral-500</code> (tertiary text): <strong class="rp-font-semibold">2.71:1 (FAIL)</strong> - Too light for body text</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><code>neutral-400</code> (disabled text): <strong class="rp-font-semibold">1.89:1 (FAIL)</strong> - Expected (disabled state)</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><code>neutral-200</code> (default border): <strong class="rp-font-semibold">1.16:1 (FAIL)</strong> - Intentionally subtle</li>
+</ul>
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">Recommendations</strong>:</p>
+<ol class="rp-list-decimal rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2">✅ <strong class="rp-font-semibold">Keep current usage</strong>: <code>neutral-500</code> is acceptable for <strong class="rp-font-semibold">large text</strong> (18pt+) or decorative elements</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">⚠️ <strong class="rp-font-semibold">Avoid for body text</strong>: Never use <code>neutral-500</code> for normal-sized body text</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">✅ <strong class="rp-font-semibold">Disabled state OK</strong>: Low contrast for disabled elements is intentional and acceptable</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">✅ <strong class="rp-font-semibold">Subtle borders OK</strong>: <code>neutral-200</code> is fine for decorative borders</li>
+</ol>
+<h3 id="3-azure-successsecondary---️-needs-attention" class="rspress-doc-outline rp-mt-10 rp-mb-2 rp-leading-7 rp-text-xl title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#3-azure-successsecondary---️-needs-attention">#</a>3. Azure (Success/Secondary) - ⚠️ Needs Attention</h3>
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">Issues</strong>:</p>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><code>azure-500</code> on white: <strong class="rp-font-semibold">2.47:1 (FAIL)</strong> - Does not meet 3:1 minimum for UI components</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">White text on <code>azure-500</code>: <strong class="rp-font-semibold">2.47:1 (FAIL)</strong> - Does not meet 4.5:1 for text</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><code>azure-800</code> on <code>azure-50</code>: <strong class="rp-font-semibold">4.04:1 (FAIL)</strong> - Just below 4.5:1 threshold</li>
+</ul>
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">Impact</strong>:</p>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2">Secondary buttons with white text will have poor contrast</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">Success indicators may be hard to see for users with low vision</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">Success alert text is marginally below AA</li>
+</ul>
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">Recommendations</strong>:</p>
+<h4 id="option-1-darken-azure-500-recommended" class="rspress-doc-outline rp-mt-8 rp-leading-6 rp-text-lg title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#option-1-darken-azure-500-recommended">#</a>Option 1: Darken Azure 500 (Recommended)</h4>
+<p class="rp-my-4 rp-leading-7">Replace <code>#00AEFF</code> with a darker shade like <code>#0099E6</code> or <code>#0088CC</code> to achieve 3:1+ ratio.</p>
+<div class="language-typescript"><div class="rspress-code-content rspress-scrollbar"><div><pre class="shiki css-variables has-line-number" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0"><code class="language-typescript"><span class="line line-number"><span style="color:var(--shiki-token-comment)">// Current</span></span>
+<span class="line line-number"><span style="color:var(--shiki-foreground)">azure</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-foreground)"> {</span></span>
+<span class="line line-number"><span style="color:var(--shiki-token-constant)">  500</span><span style="color:var(--shiki-foreground)">: </span><span style="color:var(--shiki-token-string-expression)">&#x27;#00AEFF&#x27;</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-comment)"> // 2.47:1 contrast on white ❌</span></span>
+<span class="line line-number"><span style="color:var(--shiki-foreground)">}</span></span>
+<span class="line line-number"></span>
+<span class="line line-number"><span style="color:var(--shiki-token-comment)">// Recommended</span></span>
+<span class="line line-number"><span style="color:var(--shiki-foreground)">azure</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-foreground)"> {</span></span>
+<span class="line line-number"><span style="color:var(--shiki-token-constant)">  500</span><span style="color:var(--shiki-foreground)">: </span><span style="color:var(--shiki-token-string-expression)">&#x27;#0088CC&#x27;</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-comment)"> // ~3.5:1 contrast on white ✅</span></span>
+<span class="line line-number"><span style="color:var(--shiki-foreground)">}</span></span></code></pre></div><div class="code-button-group_fb445"><button class="" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_fb89b"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_ccd3d"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="code-copy-button_c5089" title="Copy code"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_ef942"><path fill="currentColor" d="M28 10v18H10V10zm0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_d5ec0"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9z"></path></svg></button></div></div></div>
+<h4 id="option-2-use-dark-text-on-azure-backgrounds" class="rspress-doc-outline rp-mt-8 rp-leading-6 rp-text-lg title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#option-2-use-dark-text-on-azure-backgrounds">#</a>Option 2: Use Dark Text on Azure Backgrounds</h4>
+<p class="rp-my-4 rp-leading-7">Instead of white text on Azure buttons, use dark text:</p>
+<div class="language-tsx"><div class="rspress-code-content rspress-scrollbar"><div><pre class="shiki css-variables has-line-number" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0"><code class="language-tsx"><span class="line line-number"><span style="color:var(--shiki-token-comment)">// Current (poor contrast)</span></span>
+<span class="line line-number"><span style="color:var(--shiki-foreground)">&lt;</span><span style="color:var(--shiki-token-constant)">Button</span><span style="color:var(--shiki-token-function)"> className</span><span style="color:var(--shiki-token-keyword)">=</span><span style="color:var(--shiki-token-string-expression)">&quot;bg-azure-500 text-white&quot;</span><span style="color:var(--shiki-foreground)">&gt;Secondary Action&lt;/</span><span style="color:var(--shiki-token-constant)">Button</span><span style="color:var(--shiki-foreground)">&gt; </span><span style="color:var(--shiki-token-comment)">// 2.47:1 ❌</span></span>
+<span class="line line-number"></span>
+<span class="line line-number"><span style="color:var(--shiki-token-comment)">// Recommended</span></span>
+<span class="line line-number"><span style="color:var(--shiki-foreground)">&lt;</span><span style="color:var(--shiki-token-constant)">Button</span><span style="color:var(--shiki-token-function)"> className</span><span style="color:var(--shiki-token-keyword)">=</span><span style="color:var(--shiki-token-string-expression)">&quot;bg-azure-500 text-neutral-900&quot;</span><span style="color:var(--shiki-foreground)">&gt;Secondary Action&lt;/</span><span style="color:var(--shiki-token-constant)">Button</span><span style="color:var(--shiki-foreground)">&gt; </span><span style="color:var(--shiki-token-comment)">// Better ✅</span></span></code></pre></div><div class="code-button-group_fb445"><button class="" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_fb89b"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_ccd3d"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="code-copy-button_c5089" title="Copy code"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_ef942"><path fill="currentColor" d="M28 10v18H10V10zm0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_d5ec0"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9z"></path></svg></button></div></div></div>
+<h4 id="option-3-use-azure-700-for-ui-elements" class="rspress-doc-outline rp-mt-8 rp-leading-6 rp-text-lg title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#option-3-use-azure-700-for-ui-elements">#</a>Option 3: Use Azure 700 for UI Elements</h4>
+<p class="rp-my-4 rp-leading-7">For better contrast, use the darker <code>azure-700</code> instead of <code>azure-500</code>:</p>
+<div class="language-typescript"><div class="rspress-code-content rspress-scrollbar"><div><pre class="shiki css-variables has-line-number" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0"><code class="language-typescript"><span class="line line-number"><span style="color:var(--shiki-foreground)">interactive</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-foreground)"> {</span></span>
+<span class="line line-number"><span style="color:var(--shiki-foreground)">  secondary</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-foreground)"> {</span></span>
+<span class="line line-number"><span style="color:var(--shiki-token-keyword)">    default</span><span style="color:var(--shiki-foreground)">: </span><span style="color:var(--shiki-token-constant)">colors</span><span style="color:var(--shiki-foreground)">.azure[</span><span style="color:var(--shiki-token-constant)">700</span><span style="color:var(--shiki-foreground)">]</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-comment)"> // Instead of azure[500]</span></span>
+<span class="line line-number"><span style="color:var(--shiki-foreground)">  }</span></span>
+<span class="line line-number"><span style="color:var(--shiki-foreground)">}</span></span></code></pre></div><div class="code-button-group_fb445"><button class="" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_fb89b"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_ccd3d"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="code-copy-button_c5089" title="Copy code"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_ef942"><path fill="currentColor" d="M28 10v18H10V10zm0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_d5ec0"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9z"></path></svg></button></div></div></div>
+<h3 id="4-cadmium-warning---️-critical-issue" class="rspress-doc-outline rp-mt-10 rp-mb-2 rp-leading-7 rp-text-xl title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#4-cadmium-warning---️-critical-issue">#</a>4. Cadmium (Warning) - ⚠️ Critical Issue</h3>
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">Issues</strong>:</p>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><code>cadmium-600</code> on white: <strong class="rp-font-semibold">1.42:1 (FAIL)</strong> - Severe contrast issue</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><code>cadmium-800</code> on <code>cadmium-50</code>: <strong class="rp-font-semibold">1.94:1 (FAIL)</strong> - Warning alert text fails</li>
+</ul>
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">Impact</strong>:</p>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2">Warning indicators are nearly invisible to users with low vision</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">Warning alerts with light backgrounds have illegible text</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">This is a <strong class="rp-font-semibold">critical accessibility issue</strong></li>
+</ul>
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">Recommendations</strong>:</p>
+<h4 id="option-1-use-darker-cadmium-shades" class="rspress-doc-outline rp-mt-8 rp-leading-6 rp-text-lg title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#option-1-use-darker-cadmium-shades">#</a>Option 1: Use Darker Cadmium Shades</h4>
+<p class="rp-my-4 rp-leading-7">Replace warning color with <code>cadmium-800</code> or <code>cadmium-900</code>:</p>
+<div class="language-typescript"><div class="rspress-code-content rspress-scrollbar"><div><pre class="shiki css-variables has-line-number" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0"><code class="language-typescript"><span class="line line-number"><span style="color:var(--shiki-token-comment)">// Current</span></span>
+<span class="line line-number"><span style="color:var(--shiki-foreground)">feedback</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-foreground)"> {</span></span>
+<span class="line line-number"><span style="color:var(--shiki-foreground)">  warning</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-token-constant)"> colors</span><span style="color:var(--shiki-foreground)">.cadmium[</span><span style="color:var(--shiki-token-constant)">600</span><span style="color:var(--shiki-foreground)">]</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-comment)"> // 1.42:1 ❌</span></span>
+<span class="line line-number"><span style="color:var(--shiki-foreground)">}</span></span>
+<span class="line line-number"></span>
+<span class="line line-number"><span style="color:var(--shiki-token-comment)">// Recommended</span></span>
+<span class="line line-number"><span style="color:var(--shiki-foreground)">feedback</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-foreground)"> {</span></span>
+<span class="line line-number"><span style="color:var(--shiki-foreground)">  warning</span><span style="color:var(--shiki-token-punctuation)">:</span><span style="color:var(--shiki-token-constant)"> colors</span><span style="color:var(--shiki-foreground)">.cadmium[</span><span style="color:var(--shiki-token-constant)">900</span><span style="color:var(--shiki-foreground)">]</span><span style="color:var(--shiki-token-punctuation)">,</span><span style="color:var(--shiki-token-comment)"> // Much better contrast ✅</span></span>
+<span class="line line-number"><span style="color:var(--shiki-foreground)">}</span></span></code></pre></div><div class="code-button-group_fb445"><button class="" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_fb89b"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_ccd3d"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="code-copy-button_c5089" title="Copy code"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_ef942"><path fill="currentColor" d="M28 10v18H10V10zm0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_d5ec0"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9z"></path></svg></button></div></div></div>
+<h4 id="option-2-add-icons--text-required" class="rspress-doc-outline rp-mt-8 rp-leading-6 rp-text-lg title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#option-2-add-icons--text-required">#</a>Option 2: Add Icons + Text (Required)</h4>
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">Never rely on color alone for warnings</strong>. Always include:</p>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2">⚠️ Warning icon</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">Text label</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">Border/shape differentiation</li>
+</ul>
+<div class="language-tsx"><div class="rspress-code-content rspress-scrollbar"><div><pre class="shiki css-variables has-line-number" style="background-color:var(--shiki-background);color:var(--shiki-foreground)" tabindex="0"><code class="language-tsx"><span class="line line-number"><span style="color:var(--shiki-token-comment)">// ✅ CORRECT - Accessible warning</span></span>
+<span class="line line-number"><span style="color:var(--shiki-foreground)">&lt;</span><span style="color:var(--shiki-token-constant)">Alert</span><span style="color:var(--shiki-token-function)"> variant</span><span style="color:var(--shiki-token-keyword)">=</span><span style="color:var(--shiki-token-string-expression)">&quot;warning&quot;</span><span style="color:var(--shiki-foreground)">&gt;</span></span>
+<span class="line line-number"><span style="color:var(--shiki-foreground)">  &lt;</span><span style="color:var(--shiki-token-constant)">AlertCircle</span><span style="color:var(--shiki-token-function)"> className</span><span style="color:var(--shiki-token-keyword)">=</span><span style="color:var(--shiki-token-string-expression)">&quot;h-4 w-4&quot;</span><span style="color:var(--shiki-foreground)"> /&gt;</span></span>
+<span class="line line-number"><span style="color:var(--shiki-foreground)">  &lt;</span><span style="color:var(--shiki-token-constant)">AlertTitle</span><span style="color:var(--shiki-foreground)">&gt;Warning&lt;/</span><span style="color:var(--shiki-token-constant)">AlertTitle</span><span style="color:var(--shiki-foreground)">&gt;</span></span>
+<span class="line line-number"><span style="color:var(--shiki-foreground)">  &lt;</span><span style="color:var(--shiki-token-constant)">AlertDescription</span><span style="color:var(--shiki-foreground)">&gt;This is a warning message&lt;/</span><span style="color:var(--shiki-token-constant)">AlertDescription</span><span style="color:var(--shiki-foreground)">&gt;</span></span>
+<span class="line line-number"><span style="color:var(--shiki-foreground)">&lt;/</span><span style="color:var(--shiki-token-constant)">Alert</span><span style="color:var(--shiki-foreground)">&gt;</span></span></code></pre></div><div class="code-button-group_fb445"><button class="" title="Toggle code wrap"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrapped_fb89b"><path fill="#22a041" d="M21 5H3v2h18zM3 19h7v-2H3zm0-6h15c1 0 2 .43 2 2s-1 2-2 2h-2v-2l-4 3 4 3v-2h2c2.95 0 4-1.27 4-4 0-2.72-1-4-4-4H3z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" class="icon-wrap_ccd3d"><path fill="currentColor" d="M16 7H3V5h13zM3 19h13v-2H3zm19-7-4-3v2H3v2h15v2z"></path></svg></button><button class="code-copy-button_c5089" title="Copy code"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 30 30" class="icon-copy_ef942"><path fill="currentColor" d="M28 10v18H10V10zm0-2H10a2 2 0 0 0-2 2v18a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2"></path><path fill="currentColor" d="M4 18H2V4a2 2 0 0 1 2-2h14v2H4Z"></path></svg><svg width="32" height="32" viewBox="0 0 30 30" class="icon-success_d5ec0"><path fill="#49cd37" d="m13 24-9-9 1.414-1.414L13 21.171 26.586 7.586 28 9z"></path></svg></button></div></div></div>
+<h3 id="5-torch-error----good" class="rspress-doc-outline rp-mt-10 rp-mb-2 rp-leading-7 rp-text-xl title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#5-torch-error----good">#</a>5. Torch (Error) - ✅ Good</h3>
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">Performance</strong>:</p>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><code>torch-500</code> on white: <strong class="rp-font-semibold">3.91:1 (AA for UI)</strong> - Passes for UI components</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><code>torch-800</code> on <code>torch-50</code>: <strong class="rp-font-semibold">5.04:1 (AA)</strong> - Passes for alert text</li>
+</ul>
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">Recommendation</strong>: Current usage is acceptable. The error color meets minimum requirements.</p>
+<h3 id="6-purplish-info----excellent" class="rspress-doc-outline rp-mt-10 rp-mb-2 rp-leading-7 rp-text-xl title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#6-purplish-info----excellent">#</a>6. Purplish (Info) - ✅ Excellent</h3>
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">Performance</strong>:</p>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><code>purplish-500</code> on white: <strong class="rp-font-semibold">6.87:1 (AAA)</strong> - Excellent</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><code>purplish-800</code> on <code>purplish-50</code>: <strong class="rp-font-semibold">9.13:1 (AAA)</strong> - Excellent</li>
+</ul>
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">Recommendation</strong>: No changes needed. Info colors are highly accessible.</p>
+<h2 id="recommendations-summary" class="rspress-doc-outline rp-mt-12 rp-mb-6 rp-pt-8 rp-text-2xl rp-tracking-tight rp-border-t rp-border-divider-light title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#recommendations-summary">#</a>Recommendations Summary</h2>
+<h3 id="-high-priority" class="rspress-doc-outline rp-mt-10 rp-mb-2 rp-leading-7 rp-text-xl title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#-high-priority">#</a>🔴 High Priority</h3>
+<ol class="rp-list-decimal rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2">
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">Fix Cadmium (Warning) Contrast</strong></p>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><strong class="rp-font-semibold">Action</strong>: Replace <code>cadmium-600</code> with <code>cadmium-900</code> for warning indicators</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><strong class="rp-font-semibold">Impact</strong>: Critical for accessibility compliance</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><strong class="rp-font-semibold">Timeline</strong>: Immediate</li>
+</ul>
+</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">Add Icons to All Feedback States</strong></p>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><strong class="rp-font-semibold">Action</strong>: Require icons + text for error, warning, success, info states</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><strong class="rp-font-semibold">Impact</strong>: Ensures accessibility for color-blind users</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><strong class="rp-font-semibold">Timeline</strong>: Immediate</li>
+</ul>
+</li>
+</ol>
+<h3 id="-medium-priority" class="rspress-doc-outline rp-mt-10 rp-mb-2 rp-leading-7 rp-text-xl title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#-medium-priority">#</a>🟡 Medium Priority</h3>
+<ol start="3" class="rp-list-decimal rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2">
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">Review Azure (Success/Secondary) Usage</strong></p>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><strong class="rp-font-semibold">Action</strong>: Consider darkening <code>azure-500</code> or using <code>azure-700</code> for UI elements</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><strong class="rp-font-semibold">Impact</strong>: Improves secondary button and success indicator visibility</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><strong class="rp-font-semibold">Timeline</strong>: Next minor version</li>
+</ul>
+</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">Document Text Restrictions</strong></p>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><strong class="rp-font-semibold">Action</strong>: Add guidelines that <code>neutral-500</code> is for large text only</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><strong class="rp-font-semibold">Impact</strong>: Prevents misuse of low-contrast text colors</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><strong class="rp-font-semibold">Timeline</strong>: Next documentation update</li>
+</ul>
+</li>
+</ol>
+<h3 id="-low-priority" class="rspress-doc-outline rp-mt-10 rp-mb-2 rp-leading-7 rp-text-xl title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#-low-priority">#</a>🟢 Low Priority</h3>
+<ol start="5" class="rp-list-decimal rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><strong class="rp-font-semibold">Test Color Blindness Simulation</strong>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><strong class="rp-font-semibold">Action</strong>: Use tools like Stark or Color Oracle to verify color distinctions</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><strong class="rp-font-semibold">Impact</strong>: Ensures palette works for all vision types</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><strong class="rp-font-semibold">Timeline</strong>: Before major release</li>
+</ul>
+</li>
+</ol>
+<h2 id="wcag-compliance-status" class="rspress-doc-outline rp-mt-12 rp-mb-6 rp-pt-8 rp-text-2xl rp-tracking-tight rp-border-t rp-border-divider-light title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#wcag-compliance-status">#</a>WCAG Compliance Status</h2>
+<h3 id="current-status-partial-compliance-️" class="rspress-doc-outline rp-mt-10 rp-mb-2 rp-leading-7 rp-text-xl title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#current-status-partial-compliance-️">#</a>Current Status: <strong class="rp-font-semibold">Partial Compliance</strong> ⚠️</h3>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2">✅ <strong class="rp-font-semibold">Passing</strong>: Primary text, brand colors, dark mode</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">⚠️ <strong class="rp-font-semibold">Issues</strong>: Warning colors, some feedback states</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">📊 <strong class="rp-font-semibold">Overall</strong>: 66.7% pass rate (12/18 combinations)</li>
+</ul>
+<h3 id="after-recommended-fixes-full-compliance-" class="rspress-doc-outline rp-mt-10 rp-mb-2 rp-leading-7 rp-text-xl title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#after-recommended-fixes-full-compliance-">#</a>After Recommended Fixes: <strong class="rp-font-semibold">Full Compliance</strong> ✅</h3>
+<p class="rp-my-4 rp-leading-7">Implementing high-priority fixes will achieve:</p>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2">✅ All critical color combinations meet WCAG AA</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">✅ Icons + text eliminate color-only reliance</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">✅ 100% compliance for all use cases</li>
+</ul>
+<h2 id="testing-methodology" class="rspress-doc-outline rp-mt-12 rp-mb-6 rp-pt-8 rp-text-2xl rp-tracking-tight rp-border-t rp-border-divider-light title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#testing-methodology">#</a>Testing Methodology</h2>
+<h3 id="tools-used" class="rspress-doc-outline rp-mt-10 rp-mb-2 rp-leading-7 rp-text-xl title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#tools-used">#</a>Tools Used</h3>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2">Custom JavaScript contrast calculator</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">WCAG 2.1 contrast ratio algorithm</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">Relative luminance calculation (sRGB color space)</li>
+</ul>
+<h3 id="standards-applied" class="rspress-doc-outline rp-mt-10 rp-mb-2 rp-leading-7 rp-text-xl title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#standards-applied">#</a>Standards Applied</h3>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2">
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">WCAG 2.1 Level AA</strong>:</p>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2">Normal text: 4.5:1 minimum</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">Large text (18pt+ or 14pt+ bold): 3:1 minimum</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">UI components and graphical objects: 3:1 minimum</li>
+</ul>
+</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">WCAG 2.1 Level AAA</strong> (aspirational):</p>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2">Normal text: 7:1 minimum</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">Large text: 4.5:1 minimum</li>
+</ul>
+</li>
+</ul>
+<h3 id="color-combinations-tested" class="rspress-doc-outline rp-mt-10 rp-mb-2 rp-leading-7 rp-text-xl title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#color-combinations-tested">#</a>Color Combinations Tested</h3>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2">✅ Text on backgrounds (light mode)</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">✅ Interactive colors (buttons, links)</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">✅ Feedback states (error, warning, success, info)</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">✅ Borders and UI elements</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2">✅ Dark mode combinations</li>
+</ul>
+<h2 id="implementation-checklist" class="rspress-doc-outline rp-mt-12 rp-mb-6 rp-pt-8 rp-text-2xl rp-tracking-tight rp-border-t rp-border-divider-light title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#implementation-checklist">#</a>Implementation Checklist</h2>
+<h3 id="immediate-actions" class="rspress-doc-outline rp-mt-10 rp-mb-2 rp-leading-7 rp-text-xl title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#immediate-actions">#</a>Immediate Actions</h3>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><input type="checkbox" disabled=""/> Update <code>cadmium-600</code> → <code>cadmium-900</code> in semantic tokens for warning color</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><input type="checkbox" disabled=""/> Add warning icons to all warning alerts/toasts</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><input type="checkbox" disabled=""/> Document that <code>neutral-500</code> is for large text or decorative use only</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><input type="checkbox" disabled=""/> Add accessibility guidelines to component documentation</li>
+</ul>
+<h3 id="next-version" class="rspress-doc-outline rp-mt-10 rp-mb-2 rp-leading-7 rp-text-xl title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#next-version">#</a>Next Version</h3>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><input type="checkbox" disabled=""/> Consider darkening <code>azure-500</code> to improve contrast</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><input type="checkbox" disabled=""/> Test all components with color blindness simulation tools</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><input type="checkbox" disabled=""/> Add automated contrast testing to CI/CD pipeline</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><input type="checkbox" disabled=""/> Create contrast testing utilities for custom color combinations</li>
+</ul>
+<h3 id="documentation" class="rspress-doc-outline rp-mt-10 rp-mb-2 rp-leading-7 rp-text-xl title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#documentation">#</a>Documentation</h3>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><input type="checkbox" disabled=""/> Update colors documentation with contrast warnings</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><input type="checkbox" disabled=""/> Add accessibility section to component stories</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><input type="checkbox" disabled=""/> Document icon requirements for feedback states</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><input type="checkbox" disabled=""/> Create visual examples of passing/failing combinations</li>
+</ul>
+<h2 id="related-resources" class="rspress-doc-outline rp-mt-12 rp-mb-6 rp-pt-8 rp-text-2xl rp-tracking-tight rp-border-t rp-border-divider-light title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#related-resources">#</a>Related Resources</h2>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><a href="https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html" rel="noopener noreferrer" target="_blank" class="link_a7cea  link_a9ef4 inline-link_f855c">WCAG 2.1 Contrast Guidelines</a></li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><a href="https://webaim.org/resources/contrastchecker/" rel="noopener noreferrer" target="_blank" class="link_a7cea  link_a9ef4 inline-link_f855c">WebAIM Contrast Checker</a></li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><a href="https://colororacle.org/" rel="noopener noreferrer" target="_blank" class="link_a7cea  link_a9ef4 inline-link_f855c">Color Oracle (Color Blindness Simulator)</a></li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><a href="https://www.getstark.co/" rel="noopener noreferrer" target="_blank" class="link_a7cea  link_a9ef4 inline-link_f855c">Stark Plugin for Figma/Chrome</a></li>
+</ul>
+<h2 id="conclusion" class="rspress-doc-outline rp-mt-12 rp-mb-6 rp-pt-8 rp-text-2xl rp-tracking-tight rp-border-t rp-border-divider-light title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#conclusion">#</a>Conclusion</h2>
+<p class="rp-my-4 rp-leading-7">The ClickMax Design System has a <strong class="rp-font-semibold">strong foundation</strong> with excellent performance for brand colors (Fluor), primary text, and dark mode. However, <strong class="rp-font-semibold">critical issues</strong> exist with warning colors (Cadmium) and some secondary interactive elements (Azure).</p>
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">Priority 1</strong>: Fix Cadmium warning colors immediately - this is a critical accessibility barrier.</p>
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">Priority 2</strong>: Add icons + text to all feedback states to eliminate reliance on color alone.</p>
+<p class="rp-my-4 rp-leading-7">With these changes, the design system will achieve <strong class="rp-font-semibold">full WCAG AA compliance</strong> while maintaining its distinctive, vibrant brand identity.</p>
+<hr class="rp-my-12 rp-border-t rp-border-solid rp-border-divider-light"/>
+<h2 id="related-documentation" class="rspress-doc-outline rp-mt-12 rp-mb-6 rp-pt-8 rp-text-2xl rp-tracking-tight rp-border-t rp-border-divider-light title_fb7eb"><a class="link_a7cea header-anchor link_a9ef4 inline-link_f855c" aria-hidden="true" href="#related-documentation">#</a>Related Documentation</h2>
+<ul class="rp-list-disc rp-pl-5 rp-my-4 rp-leading-7">
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><a href="/tokens/colors.html" class="link_a7cea  link_a9ef4 inline-link_f855c">Colors Token Documentation</a> - Color palette reference</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><a href="/project/quick-wins.html" class="link_a7cea  link_a9ef4 inline-link_f855c">Quick Wins</a> - Other improvements implemented</li>
+<li class="[&amp;:not(:first-child)]:rp-mt-2"><a href="/project/status.html" class="link_a7cea  link_a9ef4 inline-link_f855c">Project Status</a> - Overall project status</li>
+</ul>
+<hr class="rp-my-12 rp-border-t rp-border-solid rp-border-divider-light"/>
+<p class="rp-my-4 rp-leading-7"><strong class="rp-font-semibold">Next Steps</strong>: Review this report with the design team and implement high-priority fixes in the next patch release.</p></div><script>$RB=[];$RV=function(a){$RT=performance.now();for(var b=0;b<a.length;b+=2){var c=a[b],e=a[b+1];null!==e.parentNode&&e.parentNode.removeChild(e);var f=c.parentNode;if(f){var g=c.previousSibling,h=0;do{if(c&&8===c.nodeType){var d=c.data;if("/$"===d||"/&"===d)if(0===h)break;else h--;else"$"!==d&&"$?"!==d&&"$~"!==d&&"$!"!==d&&"&"!==d||h++}d=c.nextSibling;f.removeChild(c);c=d}while(c);for(;e.firstChild;)f.insertBefore(e.firstChild,c);g.data="$";g._reactRetry&&requestAnimationFrame(g._reactRetry)}}a.length=0};
+$RC=function(a,b){if(b=document.getElementById(b))(a=document.getElementById(a))?(a.previousSibling.data="$~",$RB.push(a,b),2===$RB.length&&("number"!==typeof $RT?requestAnimationFrame($RV.bind(null,$RB)):(a=performance.now(),setTimeout($RV.bind(null,$RB),2300>a&&2E3<a?2300-a:$RT+300-a)))):b.parentNode.removeChild(b)};$RC("B:0","S:0")</script></div>
+    <div id="search-container"></div>
+  </body>
+</html>

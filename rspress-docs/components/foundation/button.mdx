@@ -1,0 +1,399 @@
+# Button
+
+Interactive button component with multiple variants and sizes. Built with Radix UI Slot pattern for composability.
+
+## Import
+
+```tsx
+import { Button } from '@clickmax/design-system';
+```
+
+## Usage
+
+### Basic Button
+
+```tsx
+<Button variant="primary">Primary Button</Button>
+```
+
+### All Variants
+
+The Button component comes with 6 variants for different use cases:
+
+```tsx
+<div className="flex gap-4 flex-wrap">
+  <Button variant="primary">Primary</Button>
+  <Button variant="secondary">Secondary</Button>
+  <Button variant="ghost">Ghost</Button>
+  <Button variant="destructive">Destructive</Button>
+  <Button variant="outline">Outline</Button>
+  <Button variant="link">Link</Button>
+</div>
+```
+
+**Use cases**:
+- **Primary**: Main call-to-action (CTA) buttons
+- **Secondary**: Supporting actions
+- **Ghost**: Minimal buttons for subtle actions
+- **Destructive**: Dangerous actions (delete, remove, etc.)
+- **Outline**: Alternative button style
+- **Link**: Text-only button styled as a link
+
+### Sizes
+
+Three size options plus an icon-only size:
+
+```tsx
+<div className="flex items-center gap-4">
+  <Button size="sm">Small</Button>
+  <Button size="md">Medium</Button>
+  <Button size="lg">Large</Button>
+  <Button size="icon" variant="outline">
+    🔍
+  </Button>
+</div>
+```
+
+| Size | Height | Padding X | Padding Y | Font Size | Use Case |
+|------|--------|-----------|-----------|-----------|----------|
+| `sm` | 32px | 12px | 6px | 14px | Compact UIs, tables |
+| `md` | 40px | 16px | 8px | 16px | Default, most common |
+| `lg` | 48px | 24px | 12px | 18px | Hero sections, prominent CTAs |
+| `icon` | 40px | 10px | 10px | - | Icon-only buttons |
+
+### Disabled State
+
+All variants can be disabled:
+
+```tsx
+<div className="flex gap-4">
+  <Button disabled>Disabled Primary</Button>
+  <Button variant="secondary" disabled>
+    Disabled Secondary
+  </Button>
+  <Button variant="outline" disabled>
+    Disabled Outline
+  </Button>
+</div>
+```
+
+Disabled buttons:
+- Have 50% opacity
+- Show `not-allowed` cursor
+- Don't trigger onClick events
+- Properly communicate state to screen readers
+
+### With Icons
+
+Use with Lucide React icons for enhanced UX:
+
+```tsx
+import { Download, ChevronRight, Plus } from 'lucide-react';
+
+<div className="flex gap-4">
+  {/* Icon before text */}
+  <Button>
+    <Download className="mr-2 h-4 w-4" />
+    Download
+  </Button>
+
+  {/* Icon after text */}
+  <Button variant="outline">
+    Next
+    <ChevronRight className="ml-2 h-4 w-4" />
+  </Button>
+
+  {/* Icon only */}
+  <Button size="icon" variant="ghost">
+    <Plus className="h-4 w-4" />
+  </Button>
+</div>
+```
+
+:::tip Icon Sizing
+Use `h-4 w-4` (16px) for icons in buttons. This matches the visual weight of the text.
+:::
+
+### asChild Pattern
+
+Use the `asChild` prop to render the button as a different element (Radix UI Slot pattern):
+
+```tsx
+// Render as a link
+<Button asChild>
+  <a href="/dashboard">Go to Dashboard</a>
+</Button>
+
+// Render as Next.js Link
+<Button asChild>
+  <Link href="/profile">View Profile</Link>
+</Button>
+
+// Render as react-router Link
+<Button asChild>
+  <RouterLink to="/settings">Settings</RouterLink>
+</Button>
+```
+
+This preserves all button styling while using the semantic HTML of the child element.
+
+## API Reference
+
+### Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `'primary' \| 'secondary' \| 'ghost' \| 'destructive' \| 'outline' \| 'link'` | `'primary'` | Visual style of the button |
+| `size` | `'sm' \| 'md' \| 'lg' \| 'icon'` | `'md'` | Size of the button |
+| `disabled` | `boolean` | `false` | Disables button interaction |
+| `asChild` | `boolean` | `false` | Renders as child element (Slot pattern) |
+| `className` | `string` | - | Additional CSS classes |
+| `onClick` | `() => void` | - | Click event handler |
+| `children` | `React.ReactNode` | - | Button content |
+
+All standard HTML button attributes are also supported (`type`, `aria-label`, etc.)
+
+### Variants
+
+#### primary
+
+Default button variant for primary actions. High contrast with yellow background.
+
+```tsx
+<Button variant="primary">Save Changes</Button>
+```
+
+**Design tokens**:
+- Background: `interactive-default` (#EAB308)
+- Hover: `interactive-hover` (#CA8A04)
+- Text: `#000` (black for contrast)
+
+#### secondary
+
+For secondary actions or less prominent buttons.
+
+```tsx
+<Button variant="secondary">Cancel</Button>
+```
+
+**Design tokens**:
+- Background: `bg-secondary`
+- Hover: `bg-tertiary`
+- Text: `text-primary`
+
+#### ghost
+
+Minimal button without background, useful for inline actions.
+
+```tsx
+<Button variant="ghost">Edit</Button>
+```
+
+**Design tokens**:
+- Background: transparent
+- Hover: `bg-secondary`
+- Text: `text-primary`
+
+#### destructive
+
+For dangerous or destructive actions (delete, remove, etc.).
+
+```tsx
+<Button variant="destructive">Delete Account</Button>
+```
+
+**Design tokens**:
+- Background: `feedback-error` (#DC2626)
+- Hover: `#B91C1C`
+- Text: white
+
+:::danger Use Sparingly
+Only use destructive buttons for truly destructive actions. Consider adding a confirmation dialog.
+:::
+
+#### outline
+
+Button with border outline, no filled background.
+
+```tsx
+<Button variant="outline">Learn More</Button>
+```
+
+**Design tokens**:
+- Background: transparent
+- Border: `border-default`
+- Hover: `bg-secondary`
+- Text: `text-primary`
+
+#### link
+
+Styled as a text link, no button appearance.
+
+```tsx
+<Button variant="link">Read Documentation</Button>
+```
+
+**Design tokens**:
+- Background: transparent
+- Text: `interactive-default`
+- Hover: underline
+
+## Accessibility
+
+The Button component is fully accessible:
+
+### Keyboard Support
+
+| Key | Action |
+|-----|--------|
+| Tab | Move focus to/from button |
+| Enter | Activate button |
+| Space | Activate button |
+
+### ARIA Attributes
+
+```tsx
+// Automatically applied
+role="button"              // When using asChild with non-button elements
+aria-disabled="true"       // When disabled prop is true
+
+// You can add custom ARIA attributes
+<Button aria-label="Close menu">
+  ×
+</Button>
+```
+
+### Screen Readers
+
+- Button text is announced
+- Disabled state is communicated
+- Icon-only buttons should include `aria-label`:
+
+```tsx
+<Button size="icon" aria-label="Delete item">
+  <Trash className="h-4 w-4" />
+</Button>
+```
+
+### Focus Management
+
+- Clear focus indicator with ring
+- Focus visible on keyboard navigation only (`:focus-visible`)
+- Focus ring color: `interactive-default`
+
+## Design Tokens
+
+The Button component uses these tokens from the design system:
+
+### Height Tokens
+
+```typescript
+// src/tokens/component/button.ts
+export const buttonTokens = {
+  height: {
+    sm: spacing[8],   // 32px
+    md: spacing[10],  // 40px
+    lg: spacing[12],  // 48px
+  },
+};
+```
+
+### Padding Tokens
+
+```typescript
+padding: {
+  sm: { x: spacing[3], y: spacing[1.5] },  // 12px 6px
+  md: { x: spacing[4], y: spacing[2] },    // 16px 8px
+  lg: { x: spacing[6], y: spacing[3] },    // 24px 12px
+  icon: spacing[2.5],                       // 10px (all sides)
+}
+```
+
+### Font Size Tokens
+
+```typescript
+fontSize: {
+  sm: typography.size.sm,    // 14px
+  md: typography.size.base,  // 16px
+  lg: typography.size.lg,    // 18px
+}
+```
+
+[View all button tokens →](/tokens/spacing#component-tokens)
+
+## Examples
+
+### Loading State
+
+Create a loading button by combining with a spinner:
+
+```tsx
+import { Button } from '@clickmax/design-system';
+import { Loader2 } from 'lucide-react';
+
+function LoadingButton({ loading, children, ...props }) {
+  return (
+    <Button disabled={loading} {...props}>
+      {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+      {children}
+    </Button>
+  );
+}
+
+// Usage
+<LoadingButton loading={isSubmitting}>
+  Submit Form
+</LoadingButton>
+```
+
+### Button Group
+
+Create a button group for related actions:
+
+```tsx
+<div className="flex gap-2">
+  <Button variant="primary">Save</Button>
+  <Button variant="secondary">Save Draft</Button>
+  <Button variant="ghost">Cancel</Button>
+</div>
+```
+
+### Form Submit Button
+
+Use in forms with proper type:
+
+```tsx
+<form onSubmit={handleSubmit}>
+  {/* form fields */}
+  <Button type="submit" variant="primary">
+    Submit
+  </Button>
+</form>
+```
+
+### Responsive Sizes
+
+Adjust button size based on viewport:
+
+```tsx
+<Button className="w-full md:w-auto" size="lg">
+  Call to Action
+</Button>
+```
+
+## Source Code
+
+View the source code on GitHub:
+
+- [Button.tsx](https://github.com/guigonzalez/ClickMax-DS-Prototype/blob/main/src/components/primitives/Button/Button.tsx)
+- [Button.stories.tsx](https://github.com/guigonzalez/ClickMax-DS-Prototype/blob/main/src/components/primitives/Button/Button.stories.tsx)
+
+## Related Components
+
+- [Icon](/components/primitives/icon) - For adding icons to buttons
+- [Badge](/components/primitives/badge) - For status indicators
+- [Card](/components/layout/card) - For grouping buttons in card footers
+
+---
+
+Need help? [Open an issue](https://github.com/guigonzalez/ClickMax-DS-Prototype/issues) or check the [Storybook examples](http://localhost:6006).

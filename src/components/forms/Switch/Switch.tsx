@@ -1,16 +1,16 @@
 import { forwardRef } from 'react';
 import * as SwitchPrimitive from '@radix-ui/react-switch';
 import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from '@/lib/utils';
+import { cn } from '@/utils';
 
 const switchVariants = cva(
   [
     'peer inline-flex shrink-0 cursor-pointer items-center rounded-full',
     'border-2 border-transparent',
     'transition-colors duration-150',
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-interactive-default',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-interactive-primary-focus',
     'disabled:cursor-not-allowed disabled:opacity-50',
-    'data-[state=checked]:bg-interactive-default',
+    'data-[state=checked]:bg-interactive-primary-default',
     'data-[state=unchecked]:bg-bg-secondary',
   ],
   {
@@ -82,13 +82,19 @@ const Switch = forwardRef<
           {label && (
             <label
               htmlFor={props.id}
-              className="text-sm font-medium text-text-primary cursor-pointer select-none leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              // Using Body 14 Medium tokens
+              className="text-[0.875rem] font-medium leading-none text-text-primary cursor-pointer select-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              style={{ fontFamily: 'var(--font-body)' }}
             >
               {label}
             </label>
           )}
           {description && (
-            <p className="text-sm text-text-secondary leading-snug">
+            <p
+              // Using Body 14 Regular tokens
+              className="text-[0.875rem] font-normal leading-[1.5] text-text-secondary"
+              style={{ fontFamily: 'var(--font-body)' }}
+            >
               {description}
             </p>
           )}

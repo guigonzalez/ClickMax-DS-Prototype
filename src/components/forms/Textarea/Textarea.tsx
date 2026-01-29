@@ -1,6 +1,6 @@
 import { forwardRef, useId, type TextareaHTMLAttributes } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from '@/lib/utils';
+import { cn } from '@/utils';
 
 const textareaVariants = cva(
   [
@@ -8,10 +8,11 @@ const textareaVariants = cva(
     'border-2 border-border-default',
     'bg-bg-primary',
     'px-3 py-2',
-    'text-sm text-text-primary',
+    // Using Body 14 Regular tokens
+    'text-[0.875rem] font-normal leading-[1.5] text-text-primary',
     'placeholder:text-text-secondary',
     'transition-colors duration-150',
-    'focus-visible:outline-none focus-visible:border-interactive-default focus-visible:ring-2 focus-visible:ring-interactive-default focus-visible:ring-offset-2',
+    'focus-visible:outline-none focus-visible:border-interactive-primary-default focus-visible:ring-2 focus-visible:ring-interactive-primary-focus focus-visible:ring-offset-2',
     'disabled:cursor-not-allowed disabled:opacity-50',
     'resize-y',
   ],
@@ -79,13 +80,20 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         {label && (
           <label
             htmlFor={id}
-            className="text-sm font-medium text-text-primary"
+            // Using Body 14 Medium tokens
+            className="text-[0.875rem] font-medium leading-[1.5] text-text-primary"
+            style={{ fontFamily: 'var(--font-body)' }}
           >
             {label}
           </label>
         )}
         {description && !error && (
-          <p id={descriptionId} className="text-sm text-text-secondary">
+          <p
+            id={descriptionId}
+            // Using Body 14 Regular tokens
+            className="text-[0.875rem] font-normal leading-[1.5] text-text-secondary"
+            style={{ fontFamily: 'var(--font-body)' }}
+          >
             {description}
           </p>
         )}
@@ -98,13 +106,19 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
               className,
             })
           )}
+          style={{ fontFamily: 'var(--font-body)' }}
           ref={ref}
           aria-describedby={ariaDescribedBy || undefined}
           aria-invalid={error ? true : undefined}
           {...props}
         />
         {error && (
-          <p id={errorId} className="text-sm text-feedback-error">
+          <p
+            id={errorId}
+            // Using Body 14 Regular tokens
+            className="text-[0.875rem] font-normal leading-[1.5] text-feedback-error"
+            style={{ fontFamily: 'var(--font-body)' }}
+          >
             {error}
           </p>
         )}

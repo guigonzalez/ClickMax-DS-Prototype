@@ -40,8 +40,9 @@ O ClickMax Design System R e uma biblioteca de componentes React moderna, constr
 
 | Tecnologia | Versao | Papel |
 |------------|--------|-------|
-| Storybook | 8.5.0 | Documentacao interativa e desenvolvimento isolado |
-| storybook-react-rsbuild | 0.1.6 | Integracao Storybook + Rsbuild |
+| Storybook | 10.2.0 | Documentacao interativa e desenvolvimento isolado |
+| storybook-react-rsbuild | 3.2.2 | Integracao Storybook + Rsbuild |
+| Rspress | 2.0.0-beta.21 | Documentacao estatica em MDX |
 
 ---
 
@@ -515,15 +516,36 @@ dist/
 
 ---
 
-## Storybook
+## Documentacao
 
-### Configuracao
+### Estrategia de Documentacao
+
+O projeto utiliza duas ferramentas complementares para documentacao:
+
+1. **Storybook 10.2.0** - Desenvolvimento interativo e showcase de componentes
+   - Formato: `.stories.tsx` (React/TSX)
+   - Uso: Desenvolvimento isolado, testes visuais, documentacao de props
+   - URL: http://localhost:6006
+
+2. **Rspress 2.0.0** - Documentacao estatica e guias
+   - Formato: `.mdx` (Markdown com JSX)
+   - Uso: Guias de uso, tutoriais, arquitetura, contribuicao
+   - URL: http://localhost:4321
+
+### Regra de Formatos
+
+**IMPORTANTE:**
+- ✅ **Storybook**: Use apenas `.stories.tsx` (nunca `.mdx`)
+- ✅ **Rspress**: Use apenas `.mdx` para documentacao estatica
+- ❌ **Nao misturar**: MDX nao e suportado no Storybook 10 devido a descontinuacao do `@storybook/blocks`
+
+### Configuracao Storybook
 
 ```typescript
 // .storybook/main.ts
 const config: StorybookConfig = {
-  stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
-  addons: ['@storybook/addon-essentials'],
+  stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'], // Somente TSX
+  addons: [], // Addons integrados no core no Storybook 10
   framework: 'storybook-react-rsbuild',
 };
 ```
@@ -531,7 +553,9 @@ const config: StorybookConfig = {
 ### Estrutura de Stories
 
 ```
-Storybook
+Storybook (apenas .stories.tsx)
+├── Documentation/
+│   └── Getting Started
 ├── Tokens/
 │   ├── Colors
 │   ├── Typography
@@ -550,6 +574,66 @@ Storybook
 └── Layout/
     └── Card
 ```
+
+### Configuracao Rspress
+
+```
+rspress-docs/ (apenas .mdx)
+├── guide/
+│   ├── getting-started.mdx
+│   ├── installation.mdx
+│   └── usage.mdx
+├── components/
+│   └── [documentacao de componentes]
+└── api/
+    └── [referencia de API]
+```
+
+---
+
+## Storybook 10 - Breaking Changes
+
+### Principais Mudancas
+
+O projeto foi atualizado para **Storybook 10.2.0**, que introduziu mudancas significativas:
+
+1. **ESM-Only**: Storybook 10 e distribuido apenas como ES Modules
+2. **Node Version**: Requer Node 20.19+ ou 22.12+
+3. **Addons Descontinuados**: Pacotes como `@storybook/addon-essentials`, `@storybook/blocks`, etc. foram integrados ao core
+4. **MDX Sem Suporte**: Arquivos `.mdx` com imports de `@storybook/blocks` nao funcionam mais
+
+### Migracao de MDX para TSX
+
+**Antes (Storybook 8 - nao funciona mais):**
+```mdx
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Documentation/Getting Started" />
+
+# Meu componente
+```
+
+**Depois (Storybook 10 - funcional):**
+```tsx
+import type { Meta } from '@storybook/react';
+
+const meta: Meta = {
+  title: 'Documentation/Getting Started',
+};
+
+export default meta;
+
+export const GettingStarted = () => {
+  return <div>Meu componente</div>;
+};
+```
+
+### Compatibilidade
+
+- ✅ React 19.0.0
+- ✅ Tailwind CSS 4.0.0
+- ✅ Rsbuild 1.3.21
+- ✅ storybook-react-rsbuild 3.2.2
 
 ---
 

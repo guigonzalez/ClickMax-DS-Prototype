@@ -1,39 +1,69 @@
 @import 'tailwindcss';
 
+/* ===== Font Face Declarations ===== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&family=Inter:wght@400;500;600;700&display=swap');
+
 /* ===== Theme Configuration (Tailwind CSS 4 - CSS-first) ===== */
 @theme {
-  --font-family-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, sans-serif;
+  --font-family-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-family-body: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-family-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
 
   /* === Semantic Colors === */
   --color-bg-primary: #ffffff;
-  --color-bg-secondary: #e8e9eb;
-  --color-bg-tertiary: #f5f5f5;
-  --color-bg-inverse: #2a2d31;
-  --color-bg-accent: #e4ff00;
-  --color-bg-disabled: #e8e9eb;
+  --color-bg-secondary: #f4f5f5;
+  --color-bg-tertiary: #fafafa;
+  --color-bg-inverse: #1f2123;
+  --color-bg-accent: #d4ff00;
+  --color-bg-disabled: #edeeef;
 
-  --color-text-primary: #2a2d31;
-  --color-text-secondary: #8b8f96;
-  --color-text-tertiary: #6b7280;
+  --color-text-primary: #1f2123;
+  --color-text-secondary: #697077;
+  --color-text-tertiary: #989ea4;
   --color-text-inverse: #ffffff;
-  --color-text-accent: #2a2d31;
-  --color-text-disabled: #c5c7cc;
+  --color-text-accent: #b9d400;
+  --color-text-disabled: #b9bdc1;
 
-  --color-border-default: #e8e9eb;
-  --color-border-strong: #2a2d31;
-  --color-border-subtle: #f5f5f5;
-  --color-border-focus: #e4ff00;
+  --color-border-default: #edeeef;
+  --color-border-strong: #3a3d41;
+  --color-border-subtle: #f4f5f5;
+  --color-border-focus: #d4ff00;
 
-  --color-feedback-error: #ef4444;
-  --color-feedback-warning: #f59e0b;
-  --color-feedback-success: #10b981;
-  --color-feedback-info: #3b82f6;
+  --color-feedback-error: #ff0052;
+  --color-feedback-warning: #ffea00;
+  --color-feedback-success: #00aeff;
+  --color-feedback-info: #6a00ff;
 
-  --color-interactive-default: #e4ff00;
-  --color-interactive-hover: #d1e600;
-  --color-interactive-active: #d1e600;
+  /* === Interactive Colors - Primary (Neutral) for system buttons === */
+  --color-interactive-primary-default: #1f2123;
+  --color-interactive-primary-hover: #3a3d41;
+  --color-interactive-primary-active: #131416;
+  --color-interactive-primary-focus: #d4ff00;
+
+  /* === Interactive Colors - Action (Fluor) for CTAs === */
+  --color-interactive-action-default: #d4ff00;
+  --color-interactive-action-hover: #c8eb00;
+  --color-interactive-action-active: #b9d400;
+  --color-interactive-action-focus: #d4ff00;
+
+  /* === Interactive Colors - Secondary (Azure) === */
+  --color-interactive-secondary-default: #00aeff;
+  --color-interactive-secondary-hover: #03a0f0;
+  --color-interactive-secondary-active: #058ddb;
+  --color-interactive-secondary-focus: #00aeff;
+
+  /* === Interactive Colors - Tertiary (Purplish) === */
+  --color-interactive-tertiary-default: #6a00ff;
+  --color-interactive-tertiary-hover: #5c00f9;
+  --color-interactive-tertiary-active: #4506e0;
+  --color-interactive-tertiary-focus: #6a00ff;
+
+  /* === Interactive Colors - Ghost (Transparent) === */
+  --color-interactive-ghost-default: transparent;
+  --color-interactive-ghost-hover: #f4f5f5;
+  --color-interactive-ghost-active: #edeeef;
+  --color-interactive-ghost-text: #1f2123;
 
   /* === Spacing === */
   --spacing-button-x-sm: 12px;
@@ -92,74 +122,146 @@
 
 /* ===== Design Tokens as CSS Variables ===== */
 :root {
-  /* === Primitive Colors === */
-  --color-yellow-500: #e4ff00;
-  --color-yellow-600: #d1e600;
-  --color-gray-50: #fafafa;
-  --color-gray-100: #f5f5f5;
-  --color-gray-200: #e8e9eb;
-  --color-gray-300: #c5c7cc;
-  --color-gray-400: #8b8f96;
-  --color-gray-500: #6b7280;
-  --color-gray-600: #4b5563;
-  --color-gray-800: #3f4248;
-  --color-gray-900: #2a2d31;
-  --color-white: #ffffff;
-  --color-black: #000000;
-  --color-red-50: #fef2f2;
-  --color-red-500: #ef4444;
-  --color-red-600: #dc2626;
-  --color-red-700: #b91c1c;
-  --color-orange-50: #fffbeb;
-  --color-orange-500: #f59e0b;
-  --color-orange-600: #d97706;
-  --color-green-50: #ecfdf5;
-  --color-green-500: #10b981;
-  --color-green-600: #059669;
-  --color-blue-50: #eff6ff;
-  --color-blue-500: #3b82f6;
-  --color-blue-600: #2563eb;
+  /* === Primitive Colors - Neutral === */
+  --color-neutral-0: #ffffff;
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f4f5f5;
+  --color-neutral-200: #edeeef;
+  --color-neutral-300: #dee0e2;
+  --color-neutral-400: #b9bdc1;
+  --color-neutral-500: #989ea4;
+  --color-neutral-600: #697077;
+  --color-neutral-700: #565c61;
+  --color-neutral-800: #3a3d41;
+  --color-neutral-900: #1f2123;
+  --color-neutral-950: #131416;
+  --color-neutral-1000: #000000;
+
+  /* === Primitive Colors - Fluor (Brand) === */
+  --color-fluor-50: #faffe7;
+  --color-fluor-100: #f2fec2;
+  --color-fluor-200: #e7fd97;
+  --color-fluor-300: #d7f433;
+  --color-fluor-400: #ddfc68;
+  --color-fluor-500: #d4ff00;
+  --color-fluor-600: #c8eb00;
+  --color-fluor-700: #b9d400;
+  --color-fluor-800: #aabc00;
+  --color-fluor-900: #929300;
+
+  /* === Primitive Colors - Azure === */
+  --color-azure-50: #e1f6ff;
+  --color-azure-100: #b4e7ff;
+  --color-azure-200: #82d7ff;
+  --color-azure-300: #4fc7ff;
+  --color-azure-400: #27bbff;
+  --color-azure-500: #00aeff;
+  --color-azure-600: #03a0f0;
+  --color-azure-700: #058ddb;
+  --color-azure-800: #057bc7;
+  --color-azure-900: #065ba5;
+
+  /* === Primitive Colors - Purplish === */
+  --color-purplish-50: #f1e6ff;
+  --color-purplish-100: #d8c1fe;
+  --color-purplish-200: #bd97ff;
+  --color-purplish-300: #a069ff;
+  --color-purplish-400: #8741ff;
+  --color-purplish-500: #6a00ff;
+  --color-purplish-600: #5c00f9;
+  --color-purplish-700: #4506e0;
+  --color-purplish-800: #290ac2;
+  --color-purplish-900: #0a0ab8;
+
+  /* === Primitive Colors - Cadmium === */
+  --color-cadmium-50: #fffde5;
+  --color-cadmium-100: #fff9bf;
+  --color-cadmium-200: #fff493;
+  --color-cadmium-300: #fff066;
+  --color-cadmium-400: #fdeb3d;
+  --color-cadmium-500: #ffea00;
+  --color-cadmium-600: #fed600;
+  --color-cadmium-700: #febd00;
+  --color-cadmium-800: #fea400;
+  --color-cadmium-900: #fd7700;
+
+  /* === Primitive Colors - Torch === */
+  --color-torch-50: #ffe4ea;
+  --color-torch-100: #ffbbcb;
+  --color-torch-200: #ff8ea9;
+  --color-torch-300: #ff5f86;
+  --color-torch-400: #ff376c;
+  --color-torch-500: #ff0052;
+  --color-torch-600: #ee0051;
+  --color-torch-700: #d9004e;
+  --color-torch-800: #c5004c;
+  --color-torch-900: #a30049;
 
   /* === Semantic Colors === */
-  --bg-primary: var(--color-white);
-  --bg-secondary: var(--color-gray-200);
-  --bg-tertiary: var(--color-gray-100);
-  --bg-inverse: var(--color-gray-900);
-  --bg-accent: var(--color-yellow-500);
-  --bg-disabled: var(--color-gray-200);
-  --bg-subtle: var(--color-gray-50);
+  --bg-primary: var(--color-neutral-0);
+  --bg-secondary: var(--color-neutral-100);
+  --bg-tertiary: var(--color-neutral-50);
+  --bg-inverse: var(--color-neutral-900);
+  --bg-accent: var(--color-fluor-500);
+  --bg-disabled: var(--color-neutral-200);
+  --bg-subtle: var(--color-neutral-50);
 
-  --text-primary: var(--color-gray-900);
-  --text-secondary: var(--color-gray-400);
-  --text-tertiary: var(--color-gray-500);
-  --text-inverse: var(--color-white);
-  --text-accent: var(--color-gray-900);
-  --text-disabled: var(--color-gray-300);
-  --text-muted: var(--color-gray-600);
+  --text-primary: var(--color-neutral-900);
+  --text-secondary: var(--color-neutral-600);
+  --text-tertiary: var(--color-neutral-500);
+  --text-inverse: var(--color-neutral-0);
+  --text-accent: var(--color-fluor-700);
+  --text-disabled: var(--color-neutral-400);
+  --text-muted: var(--color-neutral-600);
 
-  --border-default: var(--color-gray-200);
-  --border-strong: var(--color-gray-900);
-  --border-subtle: var(--color-gray-100);
-  --border-focus: var(--color-yellow-500);
-  --border-disabled: var(--color-gray-200);
+  --border-default: var(--color-neutral-200);
+  --border-strong: var(--color-neutral-800);
+  --border-subtle: var(--color-neutral-100);
+  --border-focus: var(--color-fluor-500);
+  --border-disabled: var(--color-neutral-200);
 
-  --feedback-error: var(--color-red-500);
-  --feedback-error-bg: var(--color-red-50);
-  --feedback-error-text: var(--color-red-700);
-  --feedback-warning: var(--color-orange-500);
-  --feedback-warning-bg: var(--color-orange-50);
-  --feedback-warning-text: var(--color-orange-600);
-  --feedback-success: var(--color-green-500);
-  --feedback-success-bg: var(--color-green-50);
-  --feedback-success-text: var(--color-green-600);
-  --feedback-info: var(--color-blue-500);
-  --feedback-info-bg: var(--color-blue-50);
-  --feedback-info-text: var(--color-blue-600);
+  --feedback-error: var(--color-torch-500);
+  --feedback-error-bg: var(--color-torch-50);
+  --feedback-error-text: var(--color-torch-800);
+  --feedback-warning: var(--color-cadmium-600);
+  --feedback-warning-bg: var(--color-cadmium-50);
+  --feedback-warning-text: var(--color-cadmium-800);
+  --feedback-success: var(--color-azure-500);
+  --feedback-success-bg: var(--color-azure-50);
+  --feedback-success-text: var(--color-azure-800);
+  --feedback-info: var(--color-purplish-500);
+  --feedback-info-bg: var(--color-purplish-50);
+  --feedback-info-text: var(--color-purplish-800);
 
-  --interactive-default: var(--color-yellow-500);
-  --interactive-hover: var(--color-yellow-600);
-  --interactive-active: var(--color-yellow-600);
-  --interactive-focus: var(--color-yellow-500);
+  /* === Interactive - Primary (Neutral) - System Buttons === */
+  --interactive-primary-default: var(--color-neutral-900);
+  --interactive-primary-hover: var(--color-neutral-800);
+  --interactive-primary-active: var(--color-neutral-950);
+  --interactive-primary-focus: var(--color-fluor-500);
+
+  /* === Interactive - Action (Fluor) - Call-to-Actions === */
+  --interactive-action-default: var(--color-fluor-500);
+  --interactive-action-hover: var(--color-fluor-600);
+  --interactive-action-active: var(--color-fluor-700);
+  --interactive-action-focus: var(--color-fluor-500);
+
+  /* === Interactive - Secondary (Azure) === */
+  --interactive-secondary-default: var(--color-azure-500);
+  --interactive-secondary-hover: var(--color-azure-600);
+  --interactive-secondary-active: var(--color-azure-700);
+  --interactive-secondary-focus: var(--color-azure-500);
+
+  /* === Interactive - Tertiary (Purplish) === */
+  --interactive-tertiary-default: var(--color-purplish-500);
+  --interactive-tertiary-hover: var(--color-purplish-600);
+  --interactive-tertiary-active: var(--color-purplish-700);
+  --interactive-tertiary-focus: var(--color-purplish-500);
+
+  /* === Interactive - Ghost (Transparent) === */
+  --interactive-ghost-default: transparent;
+  --interactive-ghost-hover: var(--color-neutral-100);
+  --interactive-ghost-active: var(--color-neutral-200);
+  --interactive-ghost-text: var(--color-neutral-900);
 
   /* === Spacing Tokens === */
   --space-1: 4px;
@@ -224,25 +326,119 @@
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1),
     0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  /* === Typography Tokens === */
+  /* Font Families */
+  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Heading Styles - H1 to H6 */
+  --heading-h1-font: var(--font-heading);
+  --heading-h1-size: 3.5rem; /* 56px */
+  --heading-h1-weight: 700;
+  --heading-h1-line-height: 1.2;
+  --heading-h1-letter-spacing: 0.005em;
+
+  --heading-h2-font: var(--font-heading);
+  --heading-h2-size: 3rem; /* 48px */
+  --heading-h2-weight: 700;
+  --heading-h2-line-height: 1.2;
+  --heading-h2-letter-spacing: 0.005em;
+
+  --heading-h3-font: var(--font-heading);
+  --heading-h3-size: 2.5rem; /* 40px */
+  --heading-h3-weight: 700;
+  --heading-h3-line-height: 1.2;
+  --heading-h3-letter-spacing: 0.005em;
+
+  --heading-h4-font: var(--font-heading);
+  --heading-h4-size: 2rem; /* 32px */
+  --heading-h4-weight: 700;
+  --heading-h4-line-height: 1.2;
+  --heading-h4-letter-spacing: 0.005em;
+
+  --heading-h5-font: var(--font-heading);
+  --heading-h5-size: 1.5rem; /* 24px */
+  --heading-h5-weight: 700;
+  --heading-h5-line-height: 1.2;
+  --heading-h5-letter-spacing: 0.005em;
+
+  --heading-h6-font: var(--font-heading);
+  --heading-h6-size: 1.25rem; /* 20px */
+  --heading-h6-weight: 700;
+  --heading-h6-line-height: 1.2;
+  --heading-h6-letter-spacing: 0.005em;
+
+  /* Subheading Styles */
+  --subheading-18-font: var(--font-heading);
+  --subheading-18-size: 1.125rem; /* 18px */
+  --subheading-18-weight: 700;
+  --subheading-18-line-height: 1.2;
+  --subheading-18-letter-spacing: 0.005em;
+
+  --subheading-16-font: var(--font-heading);
+  --subheading-16-size: 1rem; /* 16px */
+  --subheading-16-weight: 700;
+  --subheading-16-line-height: 1.2;
+  --subheading-16-letter-spacing: 0.005em;
+
+  --subheading-14-font: var(--font-heading);
+  --subheading-14-size: 0.875rem; /* 14px */
+  --subheading-14-weight: 700;
+  --subheading-14-line-height: 1.2;
+  --subheading-14-letter-spacing: 0.005em;
+
+  /* Body Styles */
+  --body-18-font: var(--font-body);
+  --body-18-size: 1.125rem; /* 18px */
+  --body-18-line-height: 1.4;
+  --body-18-letter-spacing: 0;
+
+  --body-16-font: var(--font-body);
+  --body-16-size: 1rem; /* 16px */
+  --body-16-line-height: 1.5;
+  --body-16-letter-spacing: 0;
+
+  --body-14-font: var(--font-body);
+  --body-14-size: 0.875rem; /* 14px */
+  --body-14-line-height: 1.5;
+  --body-14-letter-spacing: 0;
+
+  --body-12-font: var(--font-body);
+  --body-12-size: 0.75rem; /* 12px */
+  --body-12-line-height: 1.5;
+  --body-12-letter-spacing: 0;
+
+  /* Overline Styles */
+  --overline-10-font: var(--font-body);
+  --overline-10-size: 0.625rem; /* 10px */
+  --overline-10-line-height: 1.5;
+  --overline-10-letter-spacing: 0.01em;
+
+  /* XSmall Styles */
+  --xsmall-8-font: var(--font-body);
+  --xsmall-8-size: 0.5rem; /* 8px */
+  --xsmall-8-line-height: 1;
+  --xsmall-8-letter-spacing: 0;
 }
 
 /* === Dark Theme Support === */
 [data-theme='dark'] {
-  --bg-primary: var(--color-gray-900);
-  --bg-secondary: var(--color-gray-800);
-  --bg-tertiary: var(--color-gray-800);
-  --bg-inverse: var(--color-white);
-  --bg-subtle: var(--color-gray-800);
+  --bg-primary: var(--color-neutral-900);
+  --bg-secondary: var(--color-neutral-800);
+  --bg-tertiary: var(--color-neutral-800);
+  --bg-inverse: var(--color-neutral-0);
+  --bg-subtle: var(--color-neutral-800);
 
-  --text-primary: var(--color-white);
-  --text-secondary: var(--color-gray-400);
-  --text-tertiary: var(--color-gray-500);
-  --text-inverse: var(--color-gray-900);
-  --text-muted: var(--color-gray-400);
+  --text-primary: var(--color-neutral-0);
+  --text-secondary: var(--color-neutral-400);
+  --text-tertiary: var(--color-neutral-500);
+  --text-inverse: var(--color-neutral-900);
+  --text-muted: var(--color-neutral-400);
 
-  --border-default: var(--color-gray-800);
-  --border-strong: var(--color-white);
-  --border-subtle: var(--color-gray-800);
+  --border-default: var(--color-neutral-700);
+  --border-strong: var(--color-neutral-0);
+  --border-subtle: var(--color-neutral-800);
 }
 
 /* === Base Styles === */

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta = {
-  title: 'Tokens/Spacing',
+  title: 'B. Foundation/Spacing',
   parameters: {
     layout: 'padded',
   },
@@ -25,7 +25,7 @@ const SpacingBox = ({
       <p className="text-xs text-text-secondary">{pixels}</p>
     </div>
     <div
-      className="h-6 bg-interactive-default rounded"
+      className="h-6 bg-interactive-action-default rounded"
       style={{ width: size }}
     />
   </div>

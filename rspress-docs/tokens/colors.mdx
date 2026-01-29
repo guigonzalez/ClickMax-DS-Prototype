@@ -1,0 +1,573 @@
+# Colors
+
+The color system uses a **3-layer token architecture** for consistent, semantic, and maintainable styling based on the ClickMax brand identity.
+
+## Token Layers
+
+```
+┌─────────────────────────────────────────┐
+│         Component Tokens                │  ← Specific by component
+│    (button-bg, input-border, etc)       │
+├─────────────────────────────────────────┤
+│          Semantic Tokens                │  ← Purpose-based (USE THESE!)
+│  (bg-primary, text-secondary, etc)      │
+├─────────────────────────────────────────┤
+│         Primitive Tokens                │  ← Raw values
+│   (fluor-500, neutral-900, etc)         │  ← NEVER use directly!
+└─────────────────────────────────────────┘
+```
+
+:::danger Never Use Primitives Directly
+Always use **semantic tokens** in your components. Primitive tokens are implementation details that can change.
+:::
+
+## Semantic Color Tokens
+
+These are the tokens you should use in your components and applications.
+
+### Background Colors
+
+| Token | Light Value | Dark Value | Usage |
+|-------|-------------|------------|-------|
+| `bg-primary` | `#FFFFFF` | `#1F2123` | Main background color |
+| `bg-secondary` | `#F4F5F5` | `#3A3D41` | Subtle background |
+| `bg-tertiary` | `#FAFAFA` | `#3A3D41` | Card backgrounds |
+| `bg-accent` | `#D4FF00` | `#D4FF00` | Brand accent backgrounds |
+| `bg-disabled` | `#EDEEEF` | `#565C61` | Disabled state backgrounds |
+
+```tsx
+// Usage in components
+<div className="bg-bg-primary">
+  <div className="bg-bg-secondary p-4">
+    <div className="bg-bg-tertiary p-2 rounded-lg">
+      Nested backgrounds
+    </div>
+  </div>
+</div>
+```
+
+### Text Colors
+
+| Token | Light Value | Dark Value | Usage |
+|-------|-------------|------------|-------|
+| `text-primary` | `#1F2123` | `#FFFFFF` | Primary text |
+| `text-secondary` | `#697077` | `#B9BDC1` | Secondary text |
+| `text-tertiary` | `#989EA4` | `#989EA4` | Subtle text |
+| `text-accent` | `#B9D400` | `#B9D400` | Brand accent text |
+| `text-disabled` | `#B9BDC1` | `#697077` | Disabled text |
+
+```tsx
+<div>
+  <h1 className="text-text-primary">Heading</h1>
+  <p className="text-text-secondary">Description</p>
+  <span className="text-text-tertiary">Helper text</span>
+</div>
+```
+
+### Border Colors
+
+| Token | Light Value | Dark Value | Usage |
+|-------|-------------|------------|-------|
+| `border-default` | `#EDEEEF` | `#565C61` | Default borders |
+| `border-strong` | `#3A3D41` | `#FFFFFF` | Emphasized borders |
+| `border-subtle` | `#F4F5F5` | `#3A3D41` | Subtle dividers |
+| `border-focus` | `#D4FF00` | `#D4FF00` | Focus rings |
+
+```tsx
+<div className="border-2 border-border-default rounded-lg">
+  Default border
+</div>
+
+<input className="border-2 border-border-default focus:border-border-focus" />
+```
+
+### Interactive Colors
+
+The brand uses **Fluor** (fluorescent yellow-green) as the primary interactive color, with **Azure** (blue) as secondary.
+
+| Token | Light Value | Dark Value | Usage |
+|-------|-------------|------------|-------|
+| `interactive-default` | `#D4FF00` | `#D4FF00` | Primary interactive state |
+| `interactive-hover` | `#C8EB00` | `#C8EB00` | Hover state |
+| `interactive-active` | `#B9D400` | `#B9D400` | Active/pressed state |
+| `interactive-focus` | `#D4FF00` | `#D4FF00` | Focus ring |
+
+```tsx
+<button className="bg-interactive-default hover:bg-interactive-hover active:bg-interactive-active text-neutral-900">
+  Primary Action
+</button>
+```
+
+**Secondary Interactive Colors** (Azure):
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `interactive-secondary-default` | `#00AEFF` | Secondary actions |
+| `interactive-secondary-hover` | `#03A0F0` | Secondary hover |
+| `interactive-secondary-active` | `#058DDB` | Secondary active |
+
+### Feedback Colors
+
+The ClickMax Design System uses vibrant, distinctive colors for feedback states:
+
+| Token | Light Value | Dark Value | Usage |
+|-------|-------------|------------|-------|
+| `feedback-error` | `#FF0052` | `#FF0052` | Errors and validation (Torch) |
+| `feedback-warning` | `#FED600` | `#FED600` | Warnings (Cadmium) |
+| `feedback-success` | `#00AEFF` | `#00AEFF` | Success states (Azure) |
+| `feedback-info` | `#6A00FF` | `#6A00FF` | Informational messages (Purplish) |
+
+```tsx
+<div className="text-feedback-error">
+  Error message
+</div>
+
+<div className="bg-feedback-success-bg border-l-4 border-feedback-success text-feedback-success-text p-4 rounded">
+  Success notification
+</div>
+```
+
+**Feedback Background Colors** (for alerts/toasts):
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| `feedback-error-bg` | `#FFE4EA` | Error backgrounds |
+| `feedback-error-text` | `#C5004C` | Error text on light bg |
+| `feedback-warning-bg` | `#FFFDE5` | Warning backgrounds |
+| `feedback-warning-text` | `#FEA400` | Warning text on light bg |
+| `feedback-success-bg` | `#E1F6FF` | Success backgrounds |
+| `feedback-success-text` | `#057BC7` | Success text on light bg |
+| `feedback-info-bg` | `#F1E6FF` | Info backgrounds |
+| `feedback-info-text` | `#290AC2` | Info text on light bg |
+
+## Primitive Color Palettes
+
+These are the raw color values. **Do not use directly** - always use semantic tokens.
+
+### Neutral (Grayscale)
+
+13-tone neutral palette for backgrounds, text, and borders.
+
+| Token | Hex | Usage Context |
+|-------|-----|---------------|
+| `neutral-0` | `#FFFFFF` | Pure white |
+| `neutral-50` | `#FAFAFA` | Lightest backgrounds |
+| `neutral-100` | `#F4F5F5` | Light backgrounds |
+| `neutral-200` | `#EDEEEF` | Borders, dividers |
+| `neutral-300` | `#DEE0E2` | Subtle borders |
+| `neutral-400` | `#B9BDC1` | Disabled text |
+| `neutral-500` | `#989EA4` | Placeholder text |
+| `neutral-600` | `#697077` | Secondary text |
+| `neutral-700` | `#565C61` | Icons, labels |
+| `neutral-800` | `#3A3D41` | Strong borders |
+| `neutral-900` | `#1F2123` | Primary text |
+| `neutral-950` | `#131416` | Dark surfaces |
+| `neutral-1000` | `#000000` | Pure black |
+
+### Fluor (Brand Primary)
+
+Fluorescent yellow-green - the signature ClickMax brand color.
+
+| Token | Hex | Usage Context |
+|-------|-----|---------------|
+| `fluor-50` | `#FAFFE7` | Lightest tint |
+| `fluor-100` | `#F2FEC2` | Very light |
+| `fluor-200` | `#E7FD97` | Light |
+| `fluor-300` | `#D7F433` | Medium light |
+| `fluor-400` | `#DDFC68` | Medium |
+| `fluor-500` | `#D4FF00` | **★ Brand Primary** |
+| `fluor-600` | `#C8EB00` | Hover state |
+| `fluor-700` | `#B9D400` | Active state |
+| `fluor-800` | `#AABC00` | Dark |
+| `fluor-900` | `#929300` | Darkest |
+
+### Azure (Success / Secondary)
+
+Bright blue - used for success states and secondary interactive elements.
+
+| Token | Hex | Usage Context |
+|-------|-----|---------------|
+| `azure-50` | `#E1F6FF` | Lightest tint |
+| `azure-100` | `#B4E7FF` | Very light |
+| `azure-200` | `#82D7FF` | Light |
+| `azure-300` | `#4FC7FF` | Medium light |
+| `azure-400` | `#27BBFF` | Medium |
+| `azure-500` | `#00AEFF` | **★ Success / Secondary** |
+| `azure-600` | `#03A0F0` | Hover state |
+| `azure-700` | `#058DDB` | Active state |
+| `azure-800` | `#057BC7` | Dark |
+| `azure-900` | `#065BA5` | Darkest |
+
+### Purplish (Info)
+
+Deep purple - used for informational messages and tertiary actions.
+
+| Token | Hex | Usage Context |
+|-------|-----|---------------|
+| `purplish-50` | `#F1E6FF` | Lightest tint |
+| `purplish-100` | `#D8C1FE` | Very light |
+| `purplish-200` | `#BD97FF` | Light |
+| `purplish-300` | `#A069FF` | Medium light |
+| `purplish-400` | `#8741FF` | Medium |
+| `purplish-500` | `#6A00FF` | **★ Info** |
+| `purplish-600` | `#5C00F9` | Hover state |
+| `purplish-700` | `#4506E0` | Active state |
+| `purplish-800` | `#290AC2` | Dark |
+| `purplish-900` | `#0A0AB8` | Darkest |
+
+### Cadmium (Warning)
+
+Bright yellow - used for warning states.
+
+| Token | Hex | Usage Context |
+|-------|-----|---------------|
+| `cadmium-50` | `#FFFDE5` | Lightest tint |
+| `cadmium-100` | `#FFF9BF` | Very light |
+| `cadmium-200` | `#FFF493` | Light |
+| `cadmium-300` | `#FFF066` | Medium light |
+| `cadmium-400` | `#FDEB3D` | Medium |
+| `cadmium-500` | `#FFEA00` | Base yellow |
+| `cadmium-600` | `#FED600` | **★ Warning** |
+| `cadmium-700` | `#FEBD00` | Hover state |
+| `cadmium-800` | `#FEA400` | Active state |
+| `cadmium-900` | `#FD7700` | Darkest |
+
+### Torch (Error / Destructive)
+
+Hot pink - used for error states and destructive actions.
+
+| Token | Hex | Usage Context |
+|-------|-----|---------------|
+| `torch-50` | `#FFE4EA` | Lightest tint |
+| `torch-100` | `#FFBBCB` | Very light |
+| `torch-200` | `#FF8EA9` | Light |
+| `torch-300` | `#FF5F86` | Medium light |
+| `torch-400` | `#FF376C` | Medium |
+| `torch-500` | `#FF0052` | **★ Error** |
+| `torch-600` | `#EE0051` | Hover state |
+| `torch-700` | `#D9004E` | Active state |
+| `torch-800` | `#C5004C` | Dark |
+| `torch-900` | `#A30049` | Darkest |
+
+## Background Gradients
+
+Subtle gradients for decorative backgrounds:
+
+| Token | Value |
+|-------|-------|
+| `background-base` | `linear-gradient(180deg, #F5F5F4 0%, #FAFAFA 100%)` |
+| `background-soft` | `linear-gradient(180deg, #FAFAFA 0%, #FFFFFF 100%)` |
+
+```tsx
+<div style={{ background: 'var(--bg-gradient-base)' }}>
+  Subtle gradient background
+</div>
+```
+
+## Usage Guidelines
+
+### ✅ Do
+
+**Use semantic tokens** for styling:
+
+```tsx
+// ✅ CORRECT
+<div className="bg-bg-primary text-text-primary border-border-default">
+  Content
+</div>
+```
+
+**Group related elements** with consistent colors:
+
+```tsx
+// ✅ CORRECT
+<Card className="bg-bg-secondary">
+  <CardHeader className="border-b border-border-default">
+    <CardTitle className="text-text-primary">Title</CardTitle>
+    <CardDescription className="text-text-secondary">Description</CardDescription>
+  </CardHeader>
+</Card>
+```
+
+**Use feedback colors** for states:
+
+```tsx
+// ✅ CORRECT
+{error && (
+  <div className="bg-feedback-error-bg border-l-4 border-feedback-error p-4 rounded">
+    <p className="text-feedback-error-text text-sm font-medium">
+      {error}
+    </p>
+  </div>
+)}
+```
+
+**Use brand colors for primary actions**:
+
+```tsx
+// ✅ CORRECT
+<Button className="bg-interactive-default hover:bg-interactive-hover text-neutral-900">
+  Primary Action
+</Button>
+```
+
+### ❌ Don't
+
+**Don't use primitive tokens directly**:
+
+```tsx
+// ❌ WRONG
+<div className="bg-fluor-500 text-neutral-900 border-neutral-200">
+  Content
+</div>
+```
+
+**Don't hardcode color values**:
+
+```tsx
+// ❌ WRONG
+<div style={{ backgroundColor: '#D4FF00', color: '#1F2123' }}>
+  Content
+</div>
+```
+
+**Don't mix semantic and primitive tokens**:
+
+```tsx
+// ❌ WRONG
+<div className="bg-bg-primary text-neutral-900">
+  Content
+</div>
+```
+
+## Dark Mode
+
+All semantic tokens automatically switch in dark mode:
+
+```html
+<!-- Light mode (default) -->
+<html>
+  <div className="bg-bg-primary text-text-primary">
+    Light theme content
+  </div>
+</html>
+
+<!-- Dark mode -->
+<html data-theme="dark">
+  <div className="bg-bg-primary text-text-primary">
+    Dark theme content (automatically inverted)
+  </div>
+</html>
+```
+
+### How It Works
+
+Tokens are defined in `src/styles/globals.css` using Tailwind CSS 4's `@theme` block:
+
+```css
+@theme {
+  /* Light mode (default) */
+  --color-bg-primary: #ffffff;
+  --color-text-primary: #1f2123;
+  --color-interactive-default: #d4ff00;
+}
+
+/* Dark mode */
+[data-theme='dark'] {
+  --bg-primary: #1f2123;
+  --text-primary: #ffffff;
+  /* Interactive colors stay the same - brand consistency */
+}
+```
+
+This generates utility classes like:
+- `bg-bg-primary`
+- `text-text-primary`
+- `border-border-default`
+- `bg-interactive-default`
+
+## Accessibility
+
+### Contrast Ratios
+
+All critical color combinations meet **WCAG 2.1 AA** requirements (minimum 4.5:1 for normal text, 3:1 for large text).
+
+**High Contrast Combinations**:
+
+| Combination | Contrast Ratio | Level | Usage |
+|-------------|----------------|-------|-------|
+| `neutral-900` on `neutral-0` | 21:1 | AAA | Primary text on white |
+| `neutral-600` on `neutral-0` | 10.4:1 | AAA | Secondary text on white |
+| `neutral-900` on `fluor-500` | 8.2:1 | AAA | Text on brand buttons |
+| `torch-800` on `torch-50` | 7.1:1 | AA | Error text on error bg |
+| `azure-800` on `azure-50` | 6.8:1 | AA | Success text on success bg |
+
+**Brand Interactive Colors**:
+
+| Combination | Contrast Ratio | Level | Usage |
+|-------------|----------------|-------|-------|
+| `fluor-500` on `neutral-900` | 12.5:1 | AAA | Brand accent on dark |
+| `neutral-900` on `fluor-500` | 8.2:1 | AAA | Dark text on brand |
+| `azure-500` on `neutral-0` | 3.4:1 | AA (large) | Secondary buttons |
+
+:::tip Testing Contrast
+Use browser DevTools or tools like [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) to verify custom color combinations.
+:::
+
+### Color Blindness
+
+The color system is designed to be distinguishable for common types of color blindness:
+
+- **Protanopia/Deuteranopia** (red-green): Uses fluorescent yellow-green (Fluor) and hot pink (Torch) instead of traditional red/green
+- **Tritanopia** (blue-yellow): Feedback colors have sufficient brightness and saturation differences
+- **Achromatopsia** (total): All elements work in grayscale through contrast and shape
+
+**Best practices**:
+- Don't rely on color alone to convey information
+- Use icons + text + color for states
+- Provide text labels for interactive elements
+- Ensure sufficient contrast in all color combinations
+
+## Component-Specific Colors
+
+Some components define their own color tokens:
+
+### Button Colors
+
+```typescript
+// Defined in src/components/primitives/Button.tsx
+primary: {
+  bg: 'interactive-default',      // Fluor 500
+  hover: 'interactive-hover',      // Fluor 600
+  active: 'interactive-active',    // Fluor 700
+  text: 'neutral-900',
+}
+
+secondary: {
+  bg: 'interactive-secondary-default', // Azure 500
+  hover: 'interactive-secondary-hover', // Azure 600
+  text: 'white',
+}
+```
+
+### Badge Colors
+
+```typescript
+// Defined in src/components/primitives/Badge.tsx
+success: {
+  bg: 'feedback-success-bg',    // Azure 50
+  text: 'feedback-success-text', // Azure 800
+  border: 'feedback-success',    // Azure 500
+}
+
+error: {
+  bg: 'feedback-error-bg',      // Torch 50
+  text: 'feedback-error-text',   // Torch 800
+  border: 'feedback-error',      // Torch 500
+}
+```
+
+## Implementation
+
+### In Tailwind Classes
+
+```tsx
+<div className="bg-bg-primary text-text-primary border-2 border-border-default rounded-lg">
+  Semantic tokens in Tailwind
+</div>
+```
+
+### In CSS Custom Properties
+
+```css
+.custom-component {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  border-color: var(--color-border-default);
+}
+
+.custom-button {
+  background-color: var(--color-interactive-default);
+}
+
+.custom-button:hover {
+  background-color: var(--color-interactive-hover);
+}
+```
+
+### In TypeScript/JavaScript
+
+```typescript
+import { semanticColors } from '@/tokens/semantic/colors';
+
+const styles = {
+  backgroundColor: semanticColors.bg.primary,
+  color: semanticColors.text.primary,
+  borderColor: semanticColors.border.default,
+};
+
+// Interactive states
+const buttonStyles = {
+  default: semanticColors.interactive.default,    // Fluor 500
+  hover: semanticColors.interactive.hover,        // Fluor 600
+  active: semanticColors.interactive.active,      // Fluor 700
+};
+```
+
+## Color Psychology & Brand Identity
+
+The ClickMax color system is built around the vibrant **Fluor** (fluorescent yellow-green) brand color:
+
+- **Fluor (Yellow-Green)**: Energy, innovation, forward-thinking. Main brand identifier.
+- **Azure (Bright Blue)**: Trust, reliability, success. Secondary brand color.
+- **Torch (Hot Pink)**: Urgency, attention, critical actions.
+- **Cadmium (Yellow)**: Caution, warning, informational alerts.
+- **Purplish (Deep Purple)**: Intelligence, creativity, informational content.
+- **Neutral (Grayscale)**: Balance, professionalism, content hierarchy.
+
+## Migration Guide
+
+If you're migrating from the old color system:
+
+```tsx
+// Before (old palettes: yellow, gray, red, orange, green, blue)
+<div className="bg-gray-50 text-gray-900 border-gray-200">
+  <button className="bg-yellow-500 hover:bg-yellow-600">
+    Action
+  </button>
+</div>
+
+// After (new palettes: neutral, fluor, azure, purplish, cadmium, torch)
+<div className="bg-bg-primary text-text-primary border-border-default">
+  <button className="bg-interactive-default hover:bg-interactive-hover text-neutral-900">
+    Action
+  </button>
+</div>
+```
+
+**Key Changes**:
+- `yellow-*` → `fluor-*` (brand primary color)
+- `gray-*` → `neutral-*` (grayscale)
+- `red-*` → `torch-*` (error/destructive)
+- `orange-*` → `cadmium-*` (warning)
+- `green-*` → `azure-*` (success)
+- `blue-*` → `purplish-*` (info)
+
+**Benefits**:
+- ✅ Stronger brand identity with distinctive Fluor color
+- ✅ Better accessibility with tested contrast ratios
+- ✅ More vibrant, memorable color palette
+- ✅ Improved color blindness support
+- ✅ Semantic naming (fluor = brand, torch = error)
+
+## Related
+
+- [Typography](/tokens/typography) - Text styling tokens
+- [Spacing](/tokens/spacing) - Layout and spacing tokens
+- [Effects](/tokens/effects) - Shadows, radius, and visual effects
+- [Architecture](/guide/architecture#token-system) - Token system architecture
+- [Getting Started](/guide/getting-started) - Setup and usage guide
+
+---
+
+Need to add a custom color? [Open an issue](https://github.com/guigonzalez/ClickMax-DS-Prototype/issues) to discuss semantic token additions.

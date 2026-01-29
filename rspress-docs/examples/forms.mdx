@@ -1,0 +1,542 @@
+# Form Examples
+
+This page demonstrates how to build forms using components from the ClickMax Design System.
+
+## Simple Login Form
+
+A basic login form with email and password inputs:
+
+```tsx
+import { Button, Input, Card, CardHeader, CardTitle, CardContent, CardFooter } from '@clickmax/design-system';
+
+function LoginForm() {
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Login:', formData);
+  };
+
+  return (
+    <Card className="w-full max-w-md">
+      <form onSubmit={handleSubmit}>
+        <CardHeader>
+          <CardTitle>Sign In</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <Input
+              label="Email"
+              type="email"
+              placeholder="your@email.com"
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              required
+            />
+            <Input
+              label="Password"
+              type="password"
+              placeholder="••••••••"
+              value={formData.password}
+              onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+              required
+            />
+          </div>
+        </CardContent>
+        <CardFooter>
+          <Button type="submit" variant="primary" className="w-full">
+            Sign In
+          </Button>
+        </CardFooter>
+      </form>
+    </Card>
+  );
+}
+```
+
+## Registration Form
+
+A more complex form with validation and multiple field types:
+
+```tsx
+import {
+  Button,
+  Input,
+  Checkbox,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from '@clickmax/design-system';
+
+function RegistrationForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    agreeToTerms: false,
+  });
+
+  const [errors, setErrors] = useState<Record<string, string>>({});
+
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+
+    if (!formData.name) {
+      newErrors.name = 'Name is required';
+    }
+
+    if (!formData.email || !/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Valid email is required';
+    }
+
+    if (!formData.password || formData.password.length < 8) {
+      newErrors.password = 'Password must be at least 8 characters';
+    }
+
+    if (formData.password !== formData.confirmPassword) {
+      newErrors.confirmPassword = 'Passwords do not match';
+    }
+
+    if (!formData.agreeToTerms) {
+      newErrors.agreeToTerms = 'You must agree to the terms';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (validateForm()) {
+      console.log('Registration:', formData);
+    }
+  };
+
+  return (
+    <Card className="w-full max-w-md">
+      <form onSubmit={handleSubmit}>
+        <CardHeader>
+          <CardTitle>Create Account</CardTitle>
+          <CardDescription>
+            Fill out the form below to create your account
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            <Input
+              label="Full Name"
+              placeholder="John Doe"
+              value={formData.name}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              error={errors.name}
+            />
+
+            <Input
+              label="Email"
+              type="email"
+              placeholder="your@email.com"
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              error={errors.email}
+            />
+
+            <Input
+              label="Password"
+              type="password"
+              placeholder="••••••••"
+              description="Must be at least 8 characters"
+              value={formData.password}
+              onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+              error={errors.password}
+            />
+
+            <Input
+              label="Confirm Password"
+              type="password"
+              placeholder="••••••••"
+              value={formData.confirmPassword}
+              onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
+              error={errors.confirmPassword}
+            />
+
+            <Checkbox
+              label="I agree to the terms and conditions"
+              checked={formData.agreeToTerms}
+              onCheckedChange={(checked) => {
+                if (typeof checked === 'boolean') {
+                  setFormData({ ...formData, agreeToTerms: checked });
+                }
+              }}
+              error={errors.agreeToTerms}
+              id="terms"
+            />
+          </div>
+        </CardContent>
+        <CardFooter>
+          <Button type="submit" variant="primary" className="w-full">
+            Create Account
+          </Button>
+        </CardFooter>
+      </form>
+    </Card>
+  );
+}
+```
+
+## Contact Form
+
+Form with textarea and different input types:
+
+```tsx
+import {
+  Button,
+  Input,
+  Textarea,
+  RadioGroup,
+  RadioGroupItem,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardFooter,
+} from '@clickmax/design-system';
+
+function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: 'general',
+    message: '',
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Contact form:', formData);
+  };
+
+  return (
+    <Card className="w-full max-w-2xl">
+      <form onSubmit={handleSubmit}>
+        <CardHeader>
+          <CardTitle>Contact Us</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            {/* Name and Email in a row */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <Input
+                label="Name"
+                placeholder="Your name"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                required
+              />
+              <Input
+                label="Email"
+                type="email"
+                placeholder="your@email.com"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                required
+              />
+            </div>
+
+            {/* Subject as radio group */}
+            <div>
+              <label className="text-sm font-medium text-text-primary mb-2 block">
+                Subject
+              </label>
+              <RadioGroup
+                value={formData.subject}
+                onValueChange={(value) => setFormData({ ...formData, subject: value })}
+              >
+                <RadioGroupItem
+                  value="general"
+                  label="General Inquiry"
+                  description="Questions about the design system"
+                  id="subject-general"
+                />
+                <RadioGroupItem
+                  value="bug"
+                  label="Bug Report"
+                  description="Report an issue or bug"
+                  id="subject-bug"
+                />
+                <RadioGroupItem
+                  value="feature"
+                  label="Feature Request"
+                  description="Suggest a new feature"
+                  id="subject-feature"
+                />
+              </RadioGroup>
+            </div>
+
+            {/* Message textarea */}
+            <Textarea
+              label="Message"
+              placeholder="Tell us what you think..."
+              description="Provide as much detail as possible"
+              textareaSize="lg"
+              value={formData.message}
+              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+              required
+            />
+          </div>
+        </CardContent>
+        <CardFooter>
+          <div className="flex gap-2">
+            <Button type="submit" variant="primary">
+              Send Message
+            </Button>
+            <Button
+              type="button"
+              variant="ghost"
+              onClick={() => setFormData({ name: '', email: '', subject: 'general', message: '' })}
+            >
+              Reset
+            </Button>
+          </div>
+        </CardFooter>
+      </form>
+    </Card>
+  );
+}
+```
+
+## Settings Form
+
+Form with switches and multiple sections:
+
+```tsx
+import {
+  Button,
+  Input,
+  Switch,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from '@clickmax/design-system';
+
+function SettingsForm() {
+  const [settings, setSettings] = useState({
+    displayName: 'John Doe',
+    email: 'john@example.com',
+    emailNotifications: true,
+    pushNotifications: false,
+    weeklyDigest: true,
+    productUpdates: false,
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Settings:', settings);
+  };
+
+  return (
+    <Card className="w-full max-w-2xl">
+      <form onSubmit={handleSubmit}>
+        <CardHeader>
+          <CardTitle>Account Settings</CardTitle>
+          <CardDescription>
+            Manage your account settings and preferences
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-6">
+            {/* Profile Section */}
+            <div>
+              <h3 className="text-lg font-semibold text-text-primary mb-4">
+                Profile Information
+              </h3>
+              <div className="space-y-4">
+                <Input
+                  label="Display Name"
+                  value={settings.displayName}
+                  onChange={(e) => setSettings({ ...settings, displayName: e.target.value })}
+                />
+                <Input
+                  label="Email"
+                  type="email"
+                  value={settings.email}
+                  onChange={(e) => setSettings({ ...settings, email: e.target.value })}
+                  description="Your email address will not be shared publicly"
+                />
+              </div>
+            </div>
+
+            {/* Notifications Section */}
+            <div className="border-t border-border-default pt-6">
+              <h3 className="text-lg font-semibold text-text-primary mb-4">
+                Notification Preferences
+              </h3>
+              <div className="space-y-4">
+                <Switch
+                  label="Email Notifications"
+                  description="Receive email notifications for important updates"
+                  checked={settings.emailNotifications}
+                  onCheckedChange={(checked) =>
+                    setSettings({ ...settings, emailNotifications: checked })
+                  }
+                  id="email-notif"
+                />
+                <Switch
+                  label="Push Notifications"
+                  description="Receive push notifications on your device"
+                  checked={settings.pushNotifications}
+                  onCheckedChange={(checked) =>
+                    setSettings({ ...settings, pushNotifications: checked })
+                  }
+                  id="push-notif"
+                />
+                <Switch
+                  label="Weekly Digest"
+                  description="Get a weekly summary of activity"
+                  checked={settings.weeklyDigest}
+                  onCheckedChange={(checked) =>
+                    setSettings({ ...settings, weeklyDigest: checked })
+                  }
+                  id="weekly-digest"
+                />
+                <Switch
+                  label="Product Updates"
+                  description="Learn about new features and improvements"
+                  checked={settings.productUpdates}
+                  onCheckedChange={(checked) =>
+                    setSettings({ ...settings, productUpdates: checked })
+                  }
+                  id="product-updates"
+                />
+              </div>
+            </div>
+          </div>
+        </CardContent>
+        <CardFooter>
+          <div className="flex justify-between w-full">
+            <Button type="button" variant="ghost">
+              Cancel
+            </Button>
+            <Button type="submit" variant="primary">
+              Save Changes
+            </Button>
+          </div>
+        </CardFooter>
+      </form>
+    </Card>
+  );
+}
+```
+
+## Best Practices
+
+### Form Validation
+
+Always validate user input and provide clear error messages:
+
+```tsx
+// ✅ Good - Clear error messages
+<Input
+  label="Email"
+  type="email"
+  error="Please enter a valid email address"
+/>
+
+// ❌ Bad - Generic error
+<Input
+  label="Email"
+  type="email"
+  error="Invalid"
+/>
+```
+
+### Accessibility
+
+Make forms accessible:
+
+```tsx
+// ✅ Always include labels
+<Input label="Email" />
+
+// ✅ Add descriptions for complex fields
+<Input
+  label="Password"
+  description="Must be at least 8 characters with 1 number"
+/>
+
+// ✅ Use required attribute
+<Input label="Email" required />
+
+// ✅ Provide meaningful IDs
+<Checkbox id="terms-checkbox" label="I agree to terms" />
+```
+
+### Loading States
+
+Show loading states during form submission:
+
+```tsx
+function Form() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    try {
+      await submitForm();
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      {/* form fields */}
+      <Button type="submit" disabled={isSubmitting}>
+        {isSubmitting ? 'Submitting...' : 'Submit'}
+      </Button>
+    </form>
+  );
+}
+```
+
+### Form Layout
+
+Use responsive grid layouts for better UX:
+
+```tsx
+{/* Two columns on desktop, single column on mobile */}
+<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+  <Input label="First Name" />
+  <Input label="Last Name" />
+</div>
+
+{/* Three columns for compact forms */}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  <Input label="City" />
+  <Input label="State" />
+  <Input label="ZIP" />
+</div>
+```
+
+## Related Components
+
+- [Button](/components/primitives/button) - Form submit buttons
+- [Input](/components/primitives/input) - Text inputs
+- [Checkbox](/components/forms/checkbox) - Checkboxes
+- [Radio](/components/forms/radio) - Radio groups
+- [Switch](/components/forms/switch) - Toggle switches
+- [Textarea](/components/forms/textarea) - Multi-line text
+- [Card](/components/layout/card) - Form containers
+
+---
+
+Need more examples? Check out the [interactive playground](/playground) or view the [Storybook](http://localhost:6006).

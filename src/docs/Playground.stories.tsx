@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { Button } from '../components/primitives/Button';
-import { Input } from '../components/primitives/Input';
-import { Badge } from '../components/primitives/Badge';
+import { Button } from '../components/foundation/Button';
+import { Input } from '../components/forms/Input';
+import { Badge } from '../components/foundation/Badge';
 import {
   Card,
   CardHeader,
@@ -22,7 +22,7 @@ import {
 } from 'lucide-react';
 
 const meta: Meta = {
-  title: 'Playground/Interactive',
+  title: 'A. Getting Started/Playground',
   parameters: {
     layout: 'padded',
     docs: {

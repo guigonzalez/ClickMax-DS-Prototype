@@ -3,6 +3,16 @@ import '../src/styles/globals.css';
 
 const preview: Preview = {
   parameters: {
+    options: {
+      storySort: {
+        order: [
+          'A. Getting Started',
+          'B. Foundation',
+          ['Colors', 'Typography', 'Spacing', 'Effects', 'Icons'],
+          'C. Components',
+        ],
+      },
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,

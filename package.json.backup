@@ -1,0 +1,106 @@
+{
+  "name": "@clickmax/design-system",
+  "version": "0.1.1",
+  "description": "Modern Design System built with React 19, Tailwind CSS 4, and Radix UI - ClickMax Design System R",
+  "type": "module",
+  "private": true,
+  "sideEffects": [
+    "*.css"
+  ],
+  "author": {
+    "name": "Guilherme Gonzalez",
+    "url": "https://github.com/guigonzalez"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guigonzalez/ClickMax-DS-Prototype.git"
+  },
+  "bugs": {
+    "url": "https://github.com/guigonzalez/ClickMax-DS-Prototype/issues"
+  },
+  "homepage": "https://github.com/guigonzalez/ClickMax-DS-Prototype#readme",
+  "keywords": [
+    "design-system",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "radix-ui",
+    "components",
+    "ui",
+    "storybook",
+    "accessibility",
+    "clickmax"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "dev": "rsbuild dev",
+    "build": "rsbuild build",
+    "preview": "rsbuild preview",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "docs:dev": "rspress dev",
+    "docs:build": "rspress build",
+    "docs:preview": "rspress preview",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css}\"",
+    "type-check": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": ">=19.0.0",
+    "react-dom": ">=19.0.0"
+  },
+  "dependencies": {
+    "@radix-ui/primitive": "^1.1.3",
+    "@radix-ui/react-avatar": "^1.1.3",
+    "@radix-ui/react-checkbox": "1.1.4",
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-dropdown-menu": "^2.1.6",
+    "@radix-ui/react-label": "^2.1.2",
+    "@radix-ui/react-popover": "^1.1.6",
+    "@radix-ui/react-radio-group": "1.2.3",
+    "@radix-ui/react-scroll-area": "^1.2.3",
+    "@radix-ui/react-select": "^2.1.6",
+    "@radix-ui/react-separator": "^1.1.2",
+    "@radix-ui/react-slot": "^1.2.0",
+    "@radix-ui/react-switch": "^1.1.3",
+    "@radix-ui/react-tabs": "^1.1.3",
+    "@radix-ui/react-toast": "^1.2.6",
+    "@radix-ui/react-tooltip": "^1.1.8",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.468.0",
+    "tailwind-merge": "^3.0.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@rsbuild/core": "^1.3.21",
+    "@rsbuild/plugin-react": "^1.3.2",
+    "@rspress/theme-default": "2.0.0-beta.21",
+    "@storybook/addon-a11y": "^8.5.0",
+    "@storybook/addon-essentials": "^8.5.0",
+    "@storybook/addon-interactions": "^8.5.0",
+    "@storybook/addon-links": "^8.5.0",
+    "@storybook/addon-storysource": "^8.6.14",
+    "@storybook/test": "^8.5.0",
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "eslint": "^9.17.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "globals": "^15.14.0",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "rspress": "2.0.0-beta.21",
+    "storybook": "^8.5.0",
+    "storybook-react-rsbuild": "^0.1.6",
+    "tailwindcss": "^4.0.0",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.18.1"
+  }
+}

@@ -1,0 +1,371 @@
+# Getting Started
+
+Welcome to the ClickMax Design System! This guide will help you get up and running quickly.
+
+## Overview
+
+The ClickMax Design System is a modern, accessible, and production-ready component library built with:
+
+- **React 19** - Latest React with new hooks and concurrent features
+- **Tailwind CSS 4** - CSS-first configuration with `@theme` block
+- **Radix UI** - Headless accessible primitives
+- **TypeScript 5.7** - Strict type safety with advanced features
+- **CVA** - Type-safe variant management
+- **Rsbuild** - Lightning-fast build tool powered by Rspack
+
+## Installation
+
+:::tip Note
+This is a **private package** for internal use. These instructions are for local development.
+:::
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/guigonzalez/ClickMax-DS-Prototype.git
+cd ClickMax-DS-Prototype
+npm install
+```
+
+### Run Development Servers
+
+The project includes three development environments:
+
+```bash
+# Storybook (component playground)
+npm run storybook
+
+# Rspress (documentation site)
+npm run docs:dev
+
+# Main app (interactive playground)
+npm run dev
+```
+
+Each serves a different purpose:
+
+| Command | Port | Purpose |
+|---------|------|---------|
+| `npm run storybook` | 6006 | Component development and testing |
+| `npm run docs:dev` | 3000 | Documentation site (this site!) |
+| `npm run dev` | 3001 | Interactive component builder |
+
+## First Component
+
+Let's create a simple button component:
+
+```tsx
+import { Button } from '@clickmax/design-system';
+
+export function MyComponent() {
+  return (
+    <Button variant="primary" size="md">
+      Click me
+    </Button>
+  );
+}
+```
+
+### Component Props
+
+The Button component accepts the following props:
+
+```tsx
+interface ButtonProps {
+  variant?: 'primary' | 'secondary' | 'ghost' | 'destructive' | 'outline' | 'link';
+  size?: 'sm' | 'md' | 'lg' | 'icon';
+  disabled?: boolean;
+  asChild?: boolean;
+  onClick?: () => void;
+  children: React.ReactNode;
+}
+```
+
+### All Variants
+
+```tsx
+import { Button } from '@clickmax/design-system';
+
+function AllButtonVariants() {
+  return (
+    <div className="flex gap-4 flex-wrap">
+      <Button variant="primary">Primary</Button>
+      <Button variant="secondary">Secondary</Button>
+      <Button variant="ghost">Ghost</Button>
+      <Button variant="destructive">Destructive</Button>
+      <Button variant="outline">Outline</Button>
+      <Button variant="link">Link</Button>
+    </div>
+  );
+}
+```
+
+## Using Multiple Components
+
+Combine components to build richer UIs:
+
+```tsx
+import { Button, Input, Badge, Card, CardHeader, CardTitle, CardContent } from '@clickmax/design-system';
+
+function LoginForm() {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Login</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <div className="space-y-4">
+          <Input
+            label="Email"
+            type="email"
+            placeholder="your@email.com"
+          />
+          <Input
+            label="Password"
+            type="password"
+            placeholder="••••••••"
+          />
+          <Button variant="primary" className="w-full">
+            Sign In
+          </Button>
+          <Badge variant="success">Account Active</Badge>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+```
+
+## Design Tokens
+
+The design system uses a 3-layer token system:
+
+```
+┌─────────────────────────────────────────┐
+│         Component Tokens                │  ← Specific by component
+│    (button-padding, card-gap, etc)      │
+├─────────────────────────────────────────┤
+│          Semantic Tokens                │  ← Purpose-based (use these!)
+│  (bg-primary, text-secondary, etc)      │
+├─────────────────────────────────────────┤
+│         Primitive Tokens                │  ← Raw values
+│   (yellow-500, spacing-4, etc)          │  ← NEVER use directly!
+└─────────────────────────────────────────┘
+```
+
+### Using Semantic Tokens
+
+Always use **semantic tokens** in your components:
+
+```tsx
+// ✅ CORRECT - Using semantic tokens
+<div className="bg-bg-primary text-text-primary border-border-default">
+  Content
+</div>
+
+// ❌ WRONG - Using primitive tokens directly
+<div className="bg-gray-50 text-gray-900 border-gray-200">
+  Content
+</div>
+```
+
+### Available Token Categories
+
+- **Background colors**: `bg-bg-primary`, `bg-bg-secondary`, `bg-bg-tertiary`
+- **Text colors**: `text-text-primary`, `text-text-secondary`, `text-text-tertiary`
+- **Border colors**: `border-border-default`, `border-border-strong`
+- **Interactive colors**: `bg-interactive-default`, `bg-interactive-hover`
+- **Feedback colors**: `text-feedback-error`, `bg-feedback-success`
+
+[Learn more about tokens →](/tokens/colors)
+
+## Accessibility
+
+All components are built with accessibility in mind:
+
+### Keyboard Navigation
+
+All interactive components support keyboard navigation:
+
+- **Tab**: Move focus between elements
+- **Enter/Space**: Activate buttons and controls
+- **Arrow keys**: Navigate radio groups, select options, etc.
+- **Escape**: Close dialogs and dropdowns
+
+### ARIA Attributes
+
+Components include proper ARIA attributes:
+
+```tsx
+<Input
+  label="Email"
+  description="We'll never share your email"
+  error="Invalid email format"
+/>
+// Generates:
+// - aria-describedby for description
+// - aria-invalid for error state
+// - Unique IDs using useId() hook
+```
+
+### Focus Management
+
+Focus indicators are clearly visible:
+
+```tsx
+// All focusable elements include:
+focus-visible:outline-none
+focus-visible:ring-2
+focus-visible:ring-offset-2
+focus-visible:ring-interactive-default
+```
+
+### Screen Readers
+
+- Proper semantic HTML
+- Descriptive labels
+- Status announcements
+- Error messages
+
+[Learn more about accessibility →](/guide/architecture#accessibility)
+
+## TypeScript Support
+
+The design system is fully typed with TypeScript:
+
+### Type Inference
+
+```tsx
+import { Button } from '@clickmax/design-system';
+
+// TypeScript knows all valid variants
+<Button variant="primary" />  // ✅
+<Button variant="invalid" />  // ❌ Type error
+```
+
+### Extending Component Props
+
+```tsx
+import { ButtonProps } from '@clickmax/design-system';
+
+interface CustomButtonProps extends ButtonProps {
+  loading?: boolean;
+}
+
+function CustomButton({ loading, ...props }: CustomButtonProps) {
+  return <Button {...props} disabled={loading || props.disabled} />;
+}
+```
+
+### Generic Components
+
+Some components support generics:
+
+```tsx
+// Future: Select with type-safe options
+<Select<string> options={['Option 1', 'Option 2']} />
+```
+
+## Dark Mode
+
+The design system includes dark mode support:
+
+```html
+<!-- Toggle dark mode by setting data-theme -->
+<html data-theme="dark">
+  <!-- All components automatically adapt -->
+</html>
+```
+
+Tokens automatically switch:
+
+```css
+/* Light mode */
+--color-bg-primary: #FAFAFA;
+--color-text-primary: #171717;
+
+/* Dark mode */
+[data-theme='dark'] {
+  --color-bg-primary: #171717;
+  --color-text-primary: #FAFAFA;
+}
+```
+
+## Next Steps
+
+Now that you've got the basics:
+
+- 📚 **Deep dive**: [Architecture guide](/guide/architecture)
+- 🎨 **Explore tokens**: [Design tokens](/tokens/colors)
+- 🧩 **Browse components**: [Component library](/components/primitives/button)
+- 💡 **See examples**: [Forms](/examples/forms) and [Layouts](/examples/layouts)
+- 🤝 **Contribute**: [Contributing guide](/guide/contributing)
+
+## Helpful Resources
+
+- **Storybook**: Interactive component playground
+- **GitHub**: [Source code](https://github.com/guigonzalez/ClickMax-DS-Prototype)
+- **Issues**: [Report bugs](https://github.com/guigonzalez/ClickMax-DS-Prototype/issues)
+- **Radix UI**: [Official docs](https://www.radix-ui.com/)
+- **Tailwind CSS**: [Official docs](https://tailwindcss.com/)
+
+## Tips & Tricks
+
+### Using asChild Pattern
+
+The Button component supports the `asChild` prop (Radix UI Slot pattern):
+
+```tsx
+import { Button } from '@clickmax/design-system';
+
+// Render button as a link
+<Button asChild>
+  <a href="/dashboard">Go to Dashboard</a>
+</Button>
+```
+
+### Composing with Icons
+
+Use Lucide React icons with components:
+
+```tsx
+import { Button } from '@clickmax/design-system';
+import { Download, ChevronRight } from 'lucide-react';
+
+<Button>
+  Download <Download className="ml-2 h-4 w-4" />
+</Button>
+
+<Button variant="outline">
+  Next <ChevronRight className="ml-2 h-4 w-4" />
+</Button>
+```
+
+### Customizing with className
+
+All components accept `className` for additional customization:
+
+```tsx
+<Button className="w-full mt-4">
+  Full Width Button
+</Button>
+
+<Input className="max-w-md" />
+```
+
+### Controlled vs Uncontrolled
+
+Form components support both patterns:
+
+```tsx
+// Uncontrolled (with defaultValue)
+<Input defaultValue="initial value" />
+
+// Controlled (with value + onChange)
+const [value, setValue] = useState('');
+<Input value={value} onChange={(e) => setValue(e.target.value)} />
+```
+
+---
+
+Ready to build something amazing? [Start exploring components →](/components/primitives/button)
