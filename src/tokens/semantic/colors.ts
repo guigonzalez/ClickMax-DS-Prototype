@@ -253,14 +253,14 @@ export const borderColors = {
   /**
    * FOCUS BORDER
    * Usage: Keyboard focus rings, active input states, accessibility outlines
-   * Color: Fluor (#D4FF00 - fluorescent yellow-green)
-   * Accessibility: AAA contrast on dark (13.92:1), highly visible
+   * Color: Azure (#00AEFF - vibrant blue for feedback)
+   * Accessibility: AAA contrast on dark, highly visible
    *
    * ⚠️ CRITICAL: Required for keyboard navigation accessibility
    * ✅ Good: <input className="focus:border-border-focus focus:ring-2">
    * ❌ Bad: Removing or overriding focus borders
    */
-  focus: colors.fluor[500],
+  focus: colors.azure[500],
 
   /**
    * DISABLED BORDER
@@ -306,8 +306,8 @@ export const interactiveColors = {
     hover: colors.neutral[800],
     /** Active: Neutral 950 - Darker for pressed state */
     active: colors.neutral[950],
-    /** Focus: Fluor 500 - Brand focus ring for accessibility */
-    focus: colors.fluor[500],
+    /** Focus: Azure 500 - Feedback blue for accessibility */
+    focus: colors.azure[500],
   },
 
   /**
@@ -331,8 +331,8 @@ export const interactiveColors = {
     hover: colors.fluor[600],
     /** Active: Fluor 700 - Darkest for pressed state */
     active: colors.fluor[700],
-    /** Focus: Fluor 500 - Same as default for consistency */
-    focus: colors.fluor[500],
+    /** Focus: Azure 500 - Feedback blue for consistency */
+    focus: colors.azure[500],
   },
 
   /**

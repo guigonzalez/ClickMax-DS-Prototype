@@ -542,9 +542,17 @@ export const AllVariants: Story = {
         <h2 className="text-2xl font-bold text-text-primary mb-2">
           Todas as Variantes Interativas
         </h2>
-        <p className="text-text-secondary">
+        <p className="text-text-secondary mb-3">
           Referência completa com estados: default, hover, active, focus.
         </p>
+        <div className="bg-feedback-info-bg border border-feedback-info text-feedback-info-text p-4 rounded-lg">
+          <p className="font-semibold mb-1">💡 Estados de Focus</p>
+          <p className="text-sm">
+            Todos os estados de focus agora usam <strong>Azure (#00AEFF)</strong> para fornecer feedback visual claro.
+            Azure é a cor designada para feedback e sucesso no design system, criando uma distinção clara entre
+            ações de marca (Fluor) e feedback de interação (Azure).
+          </p>
+        </div>
       </div>
 
       <div className="space-y-6">

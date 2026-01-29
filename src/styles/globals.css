@@ -28,7 +28,7 @@
   --color-border-default: #edeeef;
   --color-border-strong: #3a3d41;
   --color-border-subtle: #f4f5f5;
-  --color-border-focus: #d4ff00;
+  --color-border-focus: #00aeff;
 
   --color-feedback-error: #ff0052;
   --color-feedback-warning: #ffea00;
@@ -39,13 +39,13 @@
   --color-interactive-primary-default: #1f2123;
   --color-interactive-primary-hover: #3a3d41;
   --color-interactive-primary-active: #131416;
-  --color-interactive-primary-focus: #d4ff00;
+  --color-interactive-primary-focus: #00aeff;
 
   /* === Interactive Colors - Action (Fluor) for CTAs === */
   --color-interactive-action-default: #d4ff00;
   --color-interactive-action-hover: #c8eb00;
   --color-interactive-action-active: #b9d400;
-  --color-interactive-action-focus: #d4ff00;
+  --color-interactive-action-focus: #00aeff;
 
   /* === Interactive Colors - Secondary (Azure) === */
   --color-interactive-secondary-default: #00aeff;
@@ -217,7 +217,7 @@
   --border-default: var(--color-neutral-200);
   --border-strong: var(--color-neutral-800);
   --border-subtle: var(--color-neutral-100);
-  --border-focus: var(--color-fluor-500);
+  --border-focus: var(--color-azure-500);
   --border-disabled: var(--color-neutral-200);
 
   --feedback-error: var(--color-torch-500);
@@ -237,13 +237,13 @@
   --interactive-primary-default: var(--color-neutral-900);
   --interactive-primary-hover: var(--color-neutral-800);
   --interactive-primary-active: var(--color-neutral-950);
-  --interactive-primary-focus: var(--color-fluor-500);
+  --interactive-primary-focus: var(--color-azure-500);
 
   /* === Interactive - Action (Fluor) - Call-to-Actions === */
   --interactive-action-default: var(--color-fluor-500);
   --interactive-action-hover: var(--color-fluor-600);
   --interactive-action-active: var(--color-fluor-700);
-  --interactive-action-focus: var(--color-fluor-500);
+  --interactive-action-focus: var(--color-azure-500);
 
   /* === Interactive - Secondary (Azure) === */
   --interactive-secondary-default: var(--color-azure-500);
